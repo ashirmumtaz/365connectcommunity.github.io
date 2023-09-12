@@ -8180,10 +8180,10 @@ h1, h2, h3, h4, h5,
   background-position: center center; }
 
 .table-wrap {
-  overflow-x: scroll; }
+  overflow-x: clip; }
 
 .table {
-  min-width: 1000px !important;
+  min-width: 100% !important;
   width: 100%; }
   .table thead th {
     border: none;
