@@ -7,9 +7,12 @@ Our community is based in Pakistan, with a particular focus on the Punjab region
 
 **Website**
 https://365connectcommunity.github.io/
+
 **Industry**
 IT Services and IT Consulting
+
 **Company size**
 2-10 employees
+
 **Founded**
 2023
