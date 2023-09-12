@@ -6,7 +6,7 @@
 Our community is based in Pakistan, with a particular focus on the Punjab region and the city of Lahore. However, we strive to bring together individuals from all corners of the world through both in-person and online events. By participating in our community, you will have the opportunity to connect with like-minded individuals, share knowledge and best practices, and gain insights into the latest trends and innovations in the D365 and Power Platform space. Join us in our efforts to build a thriving and collaborative community of D365 and Power Platform enthusiasts!
 
 **Website**
-https://happy-river-0dffcf300.3.azurestaticapps.net/
+https://365connectcommunity.github.io/
 **Industry**
 IT Services and IT Consulting
 **Company size**
