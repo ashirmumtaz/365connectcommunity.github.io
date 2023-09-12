@@ -263,16 +263,14 @@
             sidesDiv.appendChild(listItem);
             listItem1.appendChild(link1);
             sidesDiv.appendChild(listItem1)
-            document.getElementById("firstname").value = "   ";
-            document.getElementById("firstname").style.display = "none";
-            document.getElementById("lbl-firstname").style.display = "none";
-            document.getElementById("lastname").value = "   ";
-            document.getElementById("lastname").style.display = "none";
-            document.getElementById("lbl-lastname").style.display = "none";
+            document.getElementById("firstname").value = sessionStorage.firstname;
+            document.getElementById("lastname").value = sessionStorage.lastname;
             
             document.getElementById("email").value = sessionStorage.email;
             document.getElementById("lbl-email").innerText = "Signed-In as:"
             document.getElementById("email").disabled = true;
+            document.getElementById("firstname").disabled = true;
+            document.getElementById("lastname").disabled = true;
             document.getElementById("phone").style.display="none";
             document.getElementById("lbl-phone").style.display="none";
         }
