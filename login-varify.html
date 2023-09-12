@@ -157,6 +157,13 @@
     </div>
 </body>
 <script>
+    if(sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null'|| sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == ''){
+        console.log("not signed in")
+    }
+    else{
+        let url = "./my-profile.html";
+        window.location.href = url;
+    }
     const authorElement = document.querySelector('.author1');
     console.log(sessionStorage.getItem("image1"))
     if (sessionStorage.getItem("image1") == '' || sessionStorage.getItem("image1") == null || sessionStorage.getItem("image1") == 'null' || sessionStorage.getItem("image1") == 'undefined') {
