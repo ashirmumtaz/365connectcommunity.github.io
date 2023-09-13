@@ -1,0 +1,143 @@
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+</head>
+
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <img id="header-logo" style="height: 50px; margin-right: 20px;" src="./favicon.ico">
+      <a href="./index.html" style=" font-size: 29px !important;"><em></em><span style="color: #feb70c;">3</span><span style="color: #5ea904;">6</span><span style="color: #04a0ed;">5</span><span style="color: white;">C</span><span style="text-transform: lowercase;">onnect</span></a><!--#ce392c;-->
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    
+    if (screen.height > screen.width){
+      document.querySelector(".video-item").hidden = true;
+      document.getElementById("header-logo").hidden = true;
+    }
+
+///////////////
+// Menu data structure
+var signedIn = true;
+const menuData = [
+  { label: 'Home', link: '#section1', submenu: [] },
+  {
+    label: 'Our Family',
+    link: '#',
+    submenu: [
+      { label: 'Contributors', link: '#section2' , visible: true },
+      { label: 'Members', link: '#section3' , visible: true },
+    ],
+  },
+  {
+    label: 'Contributions',
+    link: '#',
+    submenu: [
+      { label: 'Events', link: '#section2' , visible: true },
+      { label: 'Blogs', link: '#section3' , visible: true },
+    ],
+  },
+  {
+    label: 'Contact Us',
+    link: '#',
+    submenu: [
+      { label: 'Get Support', link: '#section2' , visible: true },
+      { label: 'Seek Guidance', link: '#section3' , visible: true },
+    ],
+  },
+  {
+    label: 'Profile',
+    link: '#',
+    submenu: [
+      { label: 'Sign In', link: '#section2' , visible: !signedIn },
+      { label: 'My Profile', link: '#section3' , visible: signedIn },
+      { label: 'My Registrations', link: '#section3' , visible: signedIn },
+      { label: 'My Certificates', link: '#section3' , visible: signedIn },
+      { label: 'Sign Out', link: '#section3' , visible: signedIn }
+    ],
+  }
+];
+
+// Get the main menu ul element
+const mainMenu = document.querySelector('.main-menu');
+
+// Create and append menu items and submenus
+menuData.forEach((menuItemData) => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = menuItemData.link;
+  a.textContent = menuItemData.label;
+  li.appendChild(a);
+
+  if (menuItemData.submenu.length > 0) {
+    const subUl = document.createElement('ul');
+    subUl.className = 'sub-menu';
+
+    menuItemData.submenu.forEach((submenuItemData) => {
+      const subLi = document.createElement('li');
+      const subA = document.createElement('a');
+      subA.href = submenuItemData.link;
+      subA.textContent = submenuItemData.label;
+      subA.onclick = handleSubmenuItemClicked;
+      if(submenuItemData.visible){
+        subLi.appendChild(subA);
+        subUl.appendChild(subLi);
+      }
+      
+    });
+
+    li.appendChild(subUl);
+  }
+
+  mainMenu.appendChild(li);
+});
+
+function handleSubmenuItemClicked(event) {
+  // Prevent the default behavior of the link
+  event.preventDefault();
+
+  // Get the text content of the clicked submenu item
+  const submenuItemText = event.target.textContent;
+
+  // Check if the clicked submenu item is "Seek Guidance"
+  if (submenuItemText === 'Sign Out') {
+    // Call the specific function or perform some action for "Seek Guidance"
+    seekGuidanceFunction();
+  } else {
+    // Handle other submenu items here
+    console.log(`Submenu item clicked: ${submenuItemText}`);
+  }
+}
+
+// Function to handle "Seek Guidance" submenu item click
+function seekGuidanceFunction() {
+  // Add your code to handle the "Seek Guidance" click here
+  console.log('Seek Guidance clicked. Performing specific action...');
+}
+
+  </script>
