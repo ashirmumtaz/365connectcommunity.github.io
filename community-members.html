@@ -58,20 +58,25 @@
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
-                <li class="active"><a style="text-decoration: none !important;" href=""class="external">Our Members</a></li>
-                        <li><a style="text-decoration: none !important;" href="./team-members.html" class="external">Team</a></li>
                 <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
-                <!--
-            <li class="has-submenu"><a href="#section2">About Us</a>
-              <ul class="sub-menu">
-                <li><a href="#section2">Who we are?</a></li>
-                <li><a href="#section3">What we do?</a></li>
-                <li><a href="#section3">How it works?</a></li>
-                <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
-              </ul>
-            </li>-->
-                <!-- <li><a href="#section5">Video</a></li> -->
-                <li><a style="text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
+                <li class="has-submenu active"><a style="text-decoration: none !important;" href="#">Our Family</a>
+                    <ul class="sub-menu">
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html" class="external">Contributers</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./community-members.html" class="external">Members</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contributions</a>
+                    <ul class="sub-menu">
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html" class="external">Blogs</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
+                    <ul class="sub-menu">
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html" class="external">Get Support</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html" class="external">Seek Guidance</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -97,44 +102,52 @@
         const email = sessionStorage.getItem("email");
         const fullname = sessionStorage.getItem("name");
 
-        const sidesDiv = document.querySelector(".main-menu");
+       
+        var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+    function generateProfileSubMenu() {
+      if (signedIn) {
+        return `
+        <li class="has-submenu">
+      <a style="text-decoration: none !important;" href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">Sign In</a></li>
+      </ul>
+    </li>
+  `;
+      }
+      else {
+        return `
+    <li class="has-submenu">
+      <a style="text-decoration: none !important;" href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Registrations</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Certificates</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./index.html" class="external" id="logout">Sign Out</a></li>
+      </ul>
+    </li>
+  `;
+      }
+    }
 
-        // Create a new anchor element
-        const link = document.createElement("a");
-        link.style.textDecoration = "none";
-        var listItem = document.createElement("li");
+     // Find the parent ul element with the class "main-menu"
+     const mainMenu = document.querySelector('.main-menu');
 
-        var listItem1 = document.createElement("li");
-        // Set the anchor's attributes
-        link.href = "./login.html";
-        link.className = "external";
-        const link1 = document.createElement("a");
+// Append the "Profile" submenu HTML to the mainMenu
+mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+const myLink = document.getElementById('logout');
+if(document.getElementById('logout'))
+myLink.addEventListener('click', function (event) {
+        // Prevent the default behavior (e.g., navigating to the href URL)
+        event.preventDefault();
 
-        // Set the anchor's attributes
-        link1.href = "./login.html";
-        link1.className = "external";
-        link1.style.textDecoration = "none";
-        link1.textContent = "Sign Out";
-        link1.addEventListener("click", function (event) {
-            event.preventDefault();
-            sessionStorage.setItem("name", null);
-            sessionStorage.setItem("email", null);
-            sessionStorage.setItem("image", null);
-            window.location.href = "./index.html";
-        });
-        if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
-            link.textContent = "Sign-In";
-            listItem.appendChild(link);
-            sidesDiv.appendChild(listItem);
-
-        }
-        else {
-            link.textContent = fullname.split(' ')[0] + ", Profile";
-            listItem.appendChild(link);
-            sidesDiv.appendChild(listItem);
-            listItem1.appendChild(link1);
-            sidesDiv.appendChild(listItem1)
-        }
+        // You can also perform other actions here
+        sessionStorage.setItem("name", null);
+  sessionStorage.setItem("email", null);
+  sessionStorage.setItem("image", null);
+  window.location.href = './index.html';
+        
+    });
 
 
 
