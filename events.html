@@ -28,7 +28,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | 365Connect Community</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
     <script src="vendor/jquery/jquery.min.js"></script>
     <link rel="stylesheet"
@@ -47,11 +46,25 @@
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
           <ul class="main-menu">
-            <li class="active"><a style="text-decoration: none !important;" href="#section1" class="external">Events</a></li>
-            <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
-            
-            <li><a style="text-decoration: none !important;" href="./blog.html" class="external">Blog</a></li>
-            <li><a style="text-decoration: none !important;" href="./index.html">Contact</a></li>
+            <li><a href="./index.html">Home</a></li>
+                <li class="has-submenu"><a href="#">Our Family</a>
+                    <ul class="sub-menu">
+                        <li><a href="./team-members.html" class="external">Contributers</a></li>
+                        <li><a href="./community-members.html" class="external">Members</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu active"><a href="#">Contributions</a>
+                    <ul class="sub-menu">
+                        <li><a href="./events.html" class="external">Events</a></li>
+                        <li><a href="./blog.html" class="external">Blogs</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a href="#">Contact Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="./support.html" class="external">Get Support</a></li>
+                        <li><a href="./index.html" class="external">Seek Guidance</a></li>
+                    </ul>
+                </li>
           </ul>
         </nav>
       </header>
@@ -171,54 +184,55 @@ document.getElementById("event-search").addEventListener("input", filterPastEven
         const sidesDiv = document.querySelector(".main-menu");
 
         // Create a new anchor element
-        const link = document.createElement("a");
-        link.style.textDecoration = "none";
-        var listItem = document.createElement("li");
+        var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+    function generateProfileSubMenu() {
+      if (signedIn) {
+        return `
+    <li class="has-submenu">
+      <a href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a href="./login.html" class="external">Sign In</a></li>
+      </ul>
+    </li>
+  `;
+      }
+      else {
+        return `
+    <li class="has-submenu">
+      <a href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a href="./login.html" class="external">My Registrations</a></li>
+        <li><a href="./login.html" class="external">My Certificates</a></li>
+        <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
+      </ul>
+    </li>
+  `;
+      }
+    }
+    
+
+        // Add a click event listener
         
-        var listItem1     = document.createElement("li");
-        // Set the anchor's attributes
-        link.href = "./login.html";
-        link.className = "external";
-        const link1 = document.createElement("a");
 
-        // Set the anchor's attributes
-        link1.href = "./login.html";
-        link1.className = "external";
-        link1.style.textDecoration = "none";
-        link1.textContent = "Sign Out";
-        link1.addEventListener("click", function (event) {
+    // Find the parent ul element with the class "main-menu"
+    const mainMenu = document.querySelector('.main-menu');
+
+    // Append the "Profile" submenu HTML to the mainMenu
+    mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+    const myLink = document.getElementById('logout');
+    if(document.getElementById('logout'))
+    myLink.addEventListener('click', function (event) {
+            // Prevent the default behavior (e.g., navigating to the href URL)
             event.preventDefault();
+
+            // You can also perform other actions here
             sessionStorage.setItem("name", null);
-            sessionStorage.setItem("email", null);
-            sessionStorage.setItem("image", null);
-            window.location.href = "./index.html";
+      sessionStorage.setItem("email", null);
+      sessionStorage.setItem("image", null);
+      window.location.href = './index.html';
+            
         });
-        if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
-            link.textContent = "Sign-In";
-            listItem.appendChild(link);
-            sidesDiv.appendChild(listItem);
-
-        }
-        else {
-            link.textContent = fullname.split(' ')[0] + ", Profile";
-            listItem.appendChild(link);
-            sidesDiv.appendChild(listItem);
-            listItem1.appendChild(link1);
-            sidesDiv.appendChild(listItem1)
-        }
-
-
-
-        // Append the anchor to the parent element
-
-
-        // document.getElementById("search").addEventListener("keypress", function onEvent(event) {
-        //     if (event.key === "Enter") {
-        //         // Do something better
-        //         find(document.getElementById("search").value)
-        //     }
-        // });
-        // Replace with your API endpoint URL
         var myHeaders1 = new Headers();
         myHeaders1.append("type", "Past");
 

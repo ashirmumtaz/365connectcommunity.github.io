@@ -3,7 +3,8 @@
 
 <head>
     <meta property="og:title" content="365Connect Community">
-    <meta property="og:description" content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+    <meta property="og:description"
+        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
     <meta property="og:image" content="https://365connectcommunity.github.io/preview.png">
     <meta property="og:url" content="https://365connectcommunity.github.io/">
 
@@ -32,7 +33,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <script src="vendor/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
@@ -52,19 +52,25 @@
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
-                <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
-                <!--
-            <li class="has-submenu"><a href="#section2">About Us</a>
-              <ul class="sub-menu">
-                <li><a href="#section2">Who we are?</a></li>
-                <li><a href="#section3">What we do?</a></li>
-                <li><a href="#section3">How it works?</a></li>
-                <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
-              </ul>
-            </li>-->
-                <!-- <li><a href="#section5">Video</a></li> -->
-                <li><a style="text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
-                <li><a style="text-decoration: none !important;" href="./support.html" class="external">Support</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li class="has-submenu"><a href="#">Our Family</a>
+                    <ul class="sub-menu">
+                        <li><a href="./team-members.html" class="external">Contributers</a></li>
+                        <li><a href="./community-members.html" class="external">Members</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a href="#">Contributions</a>
+                    <ul class="sub-menu">
+                        <li><a href="./events.html" class="external">Events</a></li>
+                        <li><a href="./blog.html" class="external">Blogs</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a href="#">Contact Us</a>
+                    <ul class="sub-menu">
+                        <li><a href="./support.html" class="external">Get Support</a></li>
+                        <li><a href="./index.html" class="external">Seek Guidance</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -158,45 +164,55 @@
         </div>
     </footer>
     <script>
-
-        const sidesDiv1 = document.querySelector(".main-menu");
-        const link = document.createElement("a");
-        link.style.textDecoration = "none";
-        var listItem = document.createElement("li");
-        listItem.className = "active";
-
-        var listItem1 = document.createElement("li");
-        // Set the anchor's attributes
-        link.href = "./login.html";
-        link.className = "external";
-        const link1 = document.createElement("a");
-
-        // Set the anchor's attributes
-        link1.className = "external";
-        link1.textContent = "Sign-Out";
-        link1.style.textDecoration = "none";
-        link1.addEventListener("click", function (event) {
-            event.preventDefault();
-            sessionStorage.setItem("name", null);
-            sessionStorage.setItem("email", null);
-            sessionStorage.setItem("image", null);
-            window.location.href = "./login.html";
-        });
-        if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
-            link.textContent = "Sign-In";
-            listItem.appendChild(link);
-            sidesDiv1.appendChild(listItem);
-
-            window.location.href = "./login.html"
-
+        var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+        function generateProfileSubMenu() {
+            if (signedIn) {
+                return `
+    <li class="has-submenu active">
+      <a href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a href="./login.html" class="external">Sign In</a></li>
+      </ul>
+    </li>
+  `;
+            }
+            else {
+                return `
+    <li class="has-submenu active">
+      <a href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a href="./login.html" class="external">My Registrations</a></li>
+        <li><a href="./login.html" class="external">My Certificates</a></li>
+        <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
+      </ul>
+    </li>
+  `;
+            }
         }
-        else {
-            link.textContent = sessionStorage.name.split(' ')[0] + ", Profile";
-            listItem.appendChild(link);
-            sidesDiv1.appendChild(listItem);
-            listItem1.appendChild(link1);
-            sidesDiv1.appendChild(listItem1)
-        }
+
+
+        // Add a click event listener
+
+
+        // Find the parent ul element with the class "main-menu"
+        const mainMenu = document.querySelector('.main-menu');
+
+        // Append the "Profile" submenu HTML to the mainMenu
+        mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+        const myLink = document.getElementById('logout');
+        if (document.getElementById('logout'))
+            myLink.addEventListener('click', function (event) {
+                // Prevent the default behavior (e.g., navigating to the href URL)
+                event.preventDefault();
+
+                // You can also perform other actions here
+                sessionStorage.setItem("name", null);
+                sessionStorage.setItem("email", null);
+                sessionStorage.setItem("image", null);
+                window.location.href = './index.html';
+
+            });
         // Get the elements
         const openPopupButton = document.getElementById('file-openPopup1');
         openPopupButton.style.border = "5px solid orange";
@@ -330,7 +346,7 @@
                         //   <p><strong>Registered On:</strong> ${event["createdon@OData.Community.Display.V1.FormattedValue"]}</p>
                         //   <p><strong>Attendee Name:</strong> ${event["_sa_attendee_value@OData.Community.Display.V1.FormattedValue"]}</p>
                         //   <p><strong>Attendance:</strong> ${event["statuscode@OData.Community.Display.V1.FormattedValue"]}</p><br>
-                        //   <a href="./register.html?id=${event._sa_event_value}&reg=false" class="view-details" style="text-decoration: none !important;">View Details</a>
+                        //   <a href="./register.html?id=${event._sa_event_value}&reg=false" class="view-details">View Details</a>
                         // `;
                         //                     eventList1.appendChild(listItem);
                         const parentElement = document.querySelector('.row');
@@ -341,7 +357,7 @@
       <p><strong>Registered On:</strong> ${event["createdon@OData.Community.Display.V1.FormattedValue"]}</p>
       <p><strong>Attendee Name:</strong> ${event["_sa_attendee_value@OData.Community.Display.V1.FormattedValue"]}</p>
       <p><strong>Attendance:</strong> ${event["statuscode@OData.Community.Display.V1.FormattedValue"]}</p><br>
-      <a href="./register.html?id=${event._sa_event_value}&reg=false" class="view-details" style="text-decoration: none !important;">View Details</a>
+      <a href="./register.html?id=${event._sa_event_value}&reg=false" class="view-details">View Details</a>
     `;
                         eventList.appendChild(listItem);
                     }
@@ -525,7 +541,7 @@
                     .then(data => {
                         let newimage_url = data.body.entityimage;
                         authorElement.style.background = `url(data:image/png;base64,${data.body.entityimage}) center no-repeat`;
-                        sessionStorage.setItem("image",data.body.entityimage)
+                        sessionStorage.setItem("image", data.body.entityimage)
                         fileUploadPopup.style.display = 'none';
                         document.getElementById("loading").style.display = "none";
                     })
@@ -668,25 +684,25 @@
                 document.getElementById("loading").style.display = "none";
             }
         });
-        
-        if (screen.height > screen.width){
+
+        if (screen.height > screen.width) {
             document.getElementById("header-logo").hidden = true;
-        document.querySelector(".menu-link").classList.remove("active");
-        document.querySelector(".main-nav").classList.remove("active");
-        document.querySelector(".main-menu").hidden = true;
-        document.querySelector(".fa").addEventListener("click", function () {
-            if(document.querySelector(".menu-link").classList.value.includes("active")){
-                document.querySelector(".menu-link").classList.remove("active");
-                document.querySelector(".main-nav").classList.remove("active");
-                document.querySelector(".main-menu").hidden = false;
-            }
-            else{
-            document.querySelector(".menu-link").classList.add("active");
-            document.querySelector(".main-nav").classList.add("active");
+            document.querySelector(".menu-link").classList.remove("active");
+            document.querySelector(".main-nav").classList.remove("active");
             document.querySelector(".main-menu").hidden = true;
-            }
-        })
-    }
+            document.querySelector(".fa").addEventListener("click", function () {
+                if (document.querySelector(".menu-link").classList.value.includes("active")) {
+                    document.querySelector(".menu-link").classList.remove("active");
+                    document.querySelector(".main-nav").classList.remove("active");
+                    document.querySelector(".main-menu").hidden = false;
+                }
+                else {
+                    document.querySelector(".menu-link").classList.add("active");
+                    document.querySelector(".main-nav").classList.add("active");
+                    document.querySelector(".main-menu").hidden = true;
+                }
+            })
+        }
     </script>
 
 
