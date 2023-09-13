@@ -285,20 +285,8 @@
         ///// form
         function submitForm() {
             document.getElementById("loading").style.display = "block";
-            var myDiv = document.getElementById("message");
-            var headingToDelete = document.querySelector(".alert");
-            if (headingToDelete) {
-                myDiv.removeChild(headingToDelete);
-            }
-            var myDiv = document.getElementById("message");
-            var headingToDelete = document.querySelector(".alert");
-            if (headingToDelete) {
-                myDiv.removeChild(headingToDelete);
-            }
-            var myDiv = document.getElementById("message");
-            var headingToDelete = document.querySelector(".alert");
-            if (headingToDelete) {
-                myDiv.removeChild(headingToDelete);
+            while(document.querySelector(".alert")){
+                document.getElementById("message").removeChild(document.querySelector(".alert"))
             }
 
             var name = document.getElementById("name").value
