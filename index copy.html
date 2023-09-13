@@ -727,7 +727,10 @@ https://templatemo.com/tm-557-grad-school
       messagetext.textContent = alert;
       message.appendChild(messagetext);
     }
-    var z, i, elmnt, file, xhttp;
+    
+    
+    function includeHTML() {
+  var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
@@ -749,9 +752,11 @@ https://templatemo.com/tm-557-grad-school
       xhttp.open("GET", file, true);
       xhttp.send();
       /* Exit the function: */
-      
+      return;
     }
   }
+}
+includeHTML()
   </script>
 </body>
 
