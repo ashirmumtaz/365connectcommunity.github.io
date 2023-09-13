@@ -48,7 +48,12 @@ const menuData = [
 ];
 
 // Get the main menu ul element
-const mainMenu = document.querySelector('.main-menu');
+while(!document.querySelector('.main-menu')){
+    if(document.querySelector('.main-menu')){
+        const mainMenu = document.querySelector('.main-menu');
+    }
+}
+
 
 // Create and append menu items and submenus
 menuData.forEach((menuItemData) => {
