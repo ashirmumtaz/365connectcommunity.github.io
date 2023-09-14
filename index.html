@@ -695,7 +695,7 @@ https://templatemo.com/tm-557-grad-school
         document.getElementById("loading").style.display = "none";
 
       }
-      if (firstname != '' && firstname != '' && email != '' && message != '' && subject != '') {
+      if (firstname != '' && lastname != '' && email != '' && message != '' && subject != '') {
         document.getElementById("loading").style.display = "block";
 
         var myHeaders = new Headers();
@@ -711,7 +711,7 @@ https://templatemo.com/tm-557-grad-school
           redirect: 'follow'
         };
 
-        fetch("https://prod-47.southeastasia.logic.azure.com:443/workflows/46b0074054a84e919e0c6ed8c656aa76/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=dx3YJpOrWCsYEZp_53p8uUFz1xZjLf4wz4DKGzwiH1o", requestOptions)
+        fetch("https://prod-136.westeurope.logic.azure.com:443/workflows/7ee4de0f92d442fd8547108b007ad08a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ucJm0SiRYORTLODpK8UCbIP7UorZjtBu3UeQVQsaPGI", requestOptions)
           .then(response => {
             if (response.status === 200) {
               // Registration was successful
@@ -795,7 +795,7 @@ https://templatemo.com/tm-557-grad-school
           redirect: 'follow'
         };
 
-        fetch("https://prod-45.southeastasia.logic.azure.com:443/workflows/0515a79772ea4bea8491cc9ed53c5492/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=6hC7eTNLsiXD3NkmOBEDaeUiP9GhVTifo-rAYXqcmdk", requestOptions)
+        fetch("https://prod-81.westeurope.logic.azure.com:443/workflows/a8d5d8b3b2814ba49b821f72867f9fd9/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8_KyqUMf_INSyP35K0GBnSGrghCdXcubKW4h6HsGBvI", requestOptions)
           .then(response => console.log("Error"))
           .then(result => {
             showError1("You have been registered. You can now login using your email.", "success")

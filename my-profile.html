@@ -303,8 +303,8 @@
                 headers: myHeaders,
                 redirect: 'follow'
             };
-
-            const apiUrl = "https://prod-10.southeastasia.logic.azure.com:443/workflows/252f1afb2e2943abb0e38c820d33274b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8YhfmzychMhNg8o8e1nZpIIpgFHljJoY1LlqNXP9BjM";
+            ///done
+            const apiUrl = "https://prod-220.westeurope.logic.azure.com:443/workflows/66e34ad255f1445d9efae36cc77c1825/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=13kRhYkPXo5PI3kaeD9fXVgZhMqWIJwPF84o3FUMNnY";
 
             try {
                 const events = await fetchEventData(apiUrl, requestOptions);
@@ -327,9 +327,11 @@
                         return data;
                     } else {
                         showError("No Events Registered", "danger");
+                        showError1("No Events Registered", "danger");
                     }
                 } catch (error) {
                     showError("No Events Registered", "danger");
+                    showError1("No Events Registered", "danger");
                 }
             }
 
@@ -400,7 +402,7 @@
             message.appendChild(messagetext);
         }
         function showError1(alert, alertType) {
-            var message = document.querySelector('.row');
+            var message = document.getElementById('message1');
             var messagetext = document.createElement("div");
             messagetext.classList.add("alert")
             messagetext.classList.add("alert-" + alertType)
@@ -527,7 +529,7 @@
                 // Add other headers as needed
 
                 // Replace 'your-api-endpoint' with the actual API endpoint
-                fetch('https://prod-26.southeastasia.logic.azure.com:443/workflows/6205a3aedd854dac93fe8b0c6f760ec8/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jbGar-dsbKN5DJIqlT7V6-RplSxRkEpnkIG3abjQJaU', {
+                fetch('https://prod-158.westeurope.logic.azure.com:443/workflows/b34d7018c77343d5be0987e9b18c7beb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=urhseaxJ-BK6cO_N2657WEjEXnXn5y9862IiGrkA05A', {
                     method: 'POST',
                     body: formData,
                     headers: headers
@@ -670,7 +672,7 @@
                     redirect: 'follow'
                 };
 
-                fetch("https://prod-24.southeastasia.logic.azure.com:443/workflows/9f94741feb99422cb5eb88bdeeebe231/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Vo07Armmh2xofcQLWzQxncRaKS4zi00UKsZ86BGUDMY", requestOptions)
+                fetch("https://prod-191.westeurope.logic.azure.com:443/workflows/c2394956d13d4608be0fa6bc87404282/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Egsd_HYbC_jOldOC9vX6jaAku_1Ko5ljeAe7h5Fgk7c", requestOptions)
                     .then(response => response.text())
                     .then(result => {
                         namePopup.style.display = 'none';
