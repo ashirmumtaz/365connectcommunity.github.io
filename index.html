@@ -659,9 +659,8 @@ https://templatemo.com/tm-557-grad-school
 
     function submitForm() {
       document.getElementById("loading").style.display = "block";
-      var myDiv = document.getElementById("message");
       while (document.querySelector(".alert")) {
-        myDiv.removeChild(document.querySelector(".alert"));
+        document.querySelector('.alert').parentElement.removeChild(document.querySelector(".alert"));
       }
 
       var firstname = document.getElementById("firstname").value
@@ -766,9 +765,8 @@ https://templatemo.com/tm-557-grad-school
       reg_lastname = document.getElementById("reg-lastname");
       reg_email = document.getElementById("reg-email");
       reg_phone = document.getElementById("reg-phone");
-      var myDiv = document.getElementById("message12");
       while (document.querySelector(".alert")) {
-        myDiv.removeChild(document.querySelector(".alert"));
+        document.querySelector('.alert').parentElement.removeChild(document.querySelector(".alert"));
       }
       if (reg_firstname.value == '') {
         showError1("First Name is required.", "danger");
