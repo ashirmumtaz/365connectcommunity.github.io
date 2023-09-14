@@ -27,22 +27,67 @@
     <link rel="stylesheet" href="assets/css/lightbox.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found | 365Connect Community</title>
+    <title>Become a Contributor | 365Connect Community</title>
     <link rel="stylesheet" href="styles.css">
 
     <script src="vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        iframe {
-            width: 100%;
-            margin-top: 80px;
-            height: 120vh;
-            border: none; /* Optional: Removes the iframe border */
+       /* Add custom styles for the content */
+       body {
+            background-color: #172238;
+            color: #fff;
         }
-        
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 15%;
+            margin-bottom: 15%;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-title {
+            font-size: 42px;
+            color: #feb70c; /* Primary color (orange) */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .content-subtitle {
+            font-size: 24px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .content-text {
+            font-size: 18px;
+            color: #fff; /* Text color changed to white for readability */
+        }
+
+        /* Add styling for the steps */
+        .step {
+            margin-top: 20px;
+        }
+
+        .step-number {
+            font-size: 24px;
+            color: #feb70c; /* Primary color (orange) */
+            font-weight: bold;
+        }
+
+        .step-description {
+            font-size: 26px;
+            color: #fff; /* Text color changed to white for readability */
+            margin-left: 40px;
+        }
  /* Absolute Center Spinner */
  .loading {
      position: fixed;
@@ -185,49 +230,134 @@
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li class="has-submenu"><a href="#">Our Family</a>
+                <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Our Family</a>
                     <ul class="sub-menu">
-                        <li><a href="./team-members.html" class="external">Contributors</a></li>
-                        <li><a href="./community-members.html" class="external">Members</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html" class="external">Contributors</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./community-members.html" class="external">Members</a></li>
                     </ul>
                 </li>
-                <li class="has-submenu"><a href="#">Contributions</a>
+                <li class="has-submenu active"><a style="text-decoration: none !important;" href="#">Contributions</a>
                     <ul class="sub-menu">
-                        <li><a href="./events.html" class="external">Events</a></li>
-                        <li><a href="./blog.html" class="external">Blogs</a></li>
-                        <li><a href="./become-contributor.html" class="external">Become Contributor</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html" class="external">Blogs</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./become-contributor.html" class="external">Become Contributor</a></li>
                     </ul>
                 </li>
-                <li class="has-submenu"><a href="#">Contact Us</a>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
                     <ul class="sub-menu">
-                        <li><a href="./support.html" class="external">Get Support</a></li>
-                        <li><a href="./index.html" class="external">Seek Guidance</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html" class="external">Get Support</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html" class="external">Seek Guidance</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
     <div class="loading" id="loading">Loading&#8230;</div>
-    <center>
-        <p style="height: 40vh;"></p>
-        <h1>NOT Found</h1>
-        <a href="./" style="color: orange;">Click Here to Navigate to Home Screen</a>
-    </center>
     
+    
+     <div class="content-container">
+        <div class="content">
+            <div class="content-title">Become a Contributor</div>
+            <div class="content-text">Welcome to the 365Connect Community! We're excited that you want to become a contributor and help us promote and advance Microsoft D365 and Power Platform technologies. There are several ways you can contribute to our community:</div>
+            <br>
+            <div class="step">
+                <span class="step-number">1.</span>
+                <span class="step-description">Submit a Community Blog:</span>
+                <div class="content-text">
+                    <p class="content-text" style="margin-left: 40px;margin-top: 10px;">If you have valuable insights, tips, or knowledge related to D365 and Power Platform, you can contribute by writing a community blog. Here's how:</p>
+                    <ol style="list-style-type: decimal; margin-left: 60px;">
+                        <li style="margin-top: 10px;">Fill out the <a href="<LINK_TO_FORM>" target="_blank">Community Blog Submission Form</a> with your blog post details.</li>
+                        <li style="margin-top: 10px;">Our team will review your submission, and once approved, it will be published on our website.</li>
+                    </ol>
+                </div>
+            </div>
+            <br>
+            <div class="step">
+                <span class="step-number">2.</span>
+                <span class="step-description">Submit a Sample Solution:</span>
+                <div class="content-text">
+                    <p class="content-text" style="margin-left: 40px;margin-top: 10px;">Contribute to our GitHub repository with sample solutions or improvements. Here's how:</p>
+                    <ol style="list-style-type: decimal; margin-left: 60px;">
+                        <li style="margin-top: 10px;">Fork our Sample Solutions <a href="<LINK_TO_REPO>" target="_blank">GitHub repository</a>.</li>
+                        <li style="margin-top: 10px;">Create a new branch for your changes.</li>
+                        <li style="margin-top: 10px;">Add your sample solution or make improvements.</li>
+                        <li style="margin-top: 10px;">Submit a pull request to merge your changes into our repository.</li>
+                    </ol>
+                </div>
+            </div>
+            <br>
+
+            <div class="step">
+                <span class="step-number">3.</span>
+                <span class="step-description">Share Content and Events:</span>
+                <div class="content-text">
+                    <p class="content-text" style="margin-left: 40px;margin-top: 10px;">Help us by sharing valuable content and information about events related to D365 and Power Platform. Here's how:</p>
+                    <ol style="list-style-type: decimal; margin-left: 60px;">
+                        <li style="margin-top: 10px;">Share relevant content, articles, or resources on your social media profiles or within our community.</li>
+                        <li style="margin-top: 10px;">Announce and promote D365 and Power Platform events, webinars, or meetups.</li>
+                    </ol>
+                </div>
+            </div>
+            <br>
+
+            <div class="step">
+                <span class="step-number">4.</span>
+                <span class="step-description">Speak at an Event:</span>
+                <div class="content-text">
+                    <p class="content-text" style="margin-left: 40px;margin-top: 10px;">If you have expertise in these technologies, consider becoming a speaker at one of our community events. Here's how:</p>
+                    <ol style="list-style-type: decimal; margin-left: 60px;">
+                        <li style="margin-top: 10px;">Submit your topic proposal and speaker details to our event organizers.</li>
+                        <li style="margin-top: 10px;">If selected, prepare and deliver your presentation to our community.</li>
+                    </ol>
+                </div>
+            </div>
+            <br>
+
+            <div class="step">
+                <span class="step-number">5.</span>
+                <span class="step-description">Update Our Website:</span>
+                <div class="content-text">
+                    <p class="content-text" style="margin-left: 40px;margin-top: 10px;">If you notice any bugs or have suggestions for improving our website, you can contribute by forking our repository and submitting a pull request with your changes. Here's how:</p>
+                    <ol style="list-style-type: decimal; margin-left: 60px;">
+                        <li style="margin-top: 10px;">Fork our website's <a href="<LINK_TO_WEBSITE_REPO>" target="_blank">GitHub repository</a>.</li>
+                        <li style="margin-top: 10px;">Create a new branch for your changes.</li>
+                        <li style="margin-top: 10px;">Make the necessary updates or fixes.</li>
+                        <li style="margin-top: 10px;">Submit a pull request to merge your changes into our website.</li>
+                    </ol>
+                </div>
+            </div>
+            <br>
+            <div class="content-text">Together, we can make the 365Connect Community a vibrant hub for D365 and Power Platform enthusiasts. Get started today and help us grow!</div>
+        </div>
+    </div>
+    <!-- Site footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2023 by 365Connect Community
+
+                        | Design: <a href="https://www.linkedin.com/in/shaheer-ahmad-ch" rel="sponsored"
+                            target="_parent">Shaheer Ahmad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         
         const email = sessionStorage.getItem("email");
         const fullname = sessionStorage.getItem("name");
+
         var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
     function generateProfileSubMenu() {
       if (signedIn) {
         return `
-    <li class="has-submenu">
-      <a href="#">Profile</a>
+        <li class="has-submenu">
+      <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">Sign In</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">Sign In</a></li>
       </ul>
     </li>
   `;
@@ -235,12 +365,12 @@
       else {
         return `
     <li class="has-submenu">
-      <a href="#">Profile</a>
+      <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
-        <li><a href="./login.html" class="external">My Registrations</a></li>
-        <li><a href="./my-certificates.html" class="external">My Certificates</a></li>
-        <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Registrations</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./my-certificates.html" class="external">My Certificates</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./index.html" class="external" id="logout">Sign Out</a></li>
       </ul>
     </li>
   `;
