@@ -28,6 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | 365Connect Community</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
     <script src="vendor/jquery/jquery.min.js"></script>
     <link rel="stylesheet"
@@ -46,23 +47,23 @@
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
           <ul class="main-menu">
-            <li><a href="./index.html">Home</a></li>
-                <li class="has-submenu"><a href="#">Our Family</a>
+            <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Our Family</a>
                     <ul class="sub-menu">
-                        <li><a href="./team-members.html" class="external">Contributors</a></li>
-                        <li><a href="./community-members.html" class="external">Members</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html" class="external">Contributors</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./community-members.html" class="external">Members</a></li>
                     </ul>
                 </li>
-                <li class="has-submenu active"><a href="#">Contributions</a>
+                <li class="has-submenu active"><a style="text-decoration: none !important;" href="#">Contributions</a>
                     <ul class="sub-menu">
-                        <li><a href="./events.html" class="external">Events</a></li>
-                        <li><a href="./blog.html" class="external">Blogs</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html" class="external">Blogs</a></li>
                     </ul>
                 </li>
-                <li class="has-submenu"><a href="#">Contact Us</a>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
                     <ul class="sub-menu">
-                        <li><a href="./support.html" class="external">Get Support</a></li>
-                        <li><a href="./index.html" class="external">Seek Guidance</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html" class="external">Get Support</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html" class="external">Seek Guidance</a></li>
                     </ul>
                 </li>
           </ul>
@@ -188,10 +189,10 @@ document.getElementById("event-search").addEventListener("input", filterPastEven
     function generateProfileSubMenu() {
       if (signedIn) {
         return `
-    <li class="has-submenu">
-      <a href="#">Profile</a>
+        <li class="has-submenu">
+      <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">Sign In</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">Sign In</a></li>
       </ul>
     </li>
   `;
@@ -199,12 +200,12 @@ document.getElementById("event-search").addEventListener("input", filterPastEven
       else {
         return `
     <li class="has-submenu">
-      <a href="#">Profile</a>
+      <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
-        <li><a href="./login.html" class="external">My Registrations</a></li>
-        <li><a href="./login.html" class="external">My Certificates</a></li>
-        <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Registrations</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./my-certificates.html" class="external">My Certificates</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./index.html" class="external" id="logout">Sign Out</a></li>
       </ul>
     </li>
   `;
