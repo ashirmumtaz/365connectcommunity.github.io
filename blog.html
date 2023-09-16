@@ -306,7 +306,7 @@
     //         b = a;
     //         document.write("</ul>");
     //         if (b > postTitle.length) { break } } };
-    var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+    var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
     function generateProfileSubMenu() {
       if (signedIn) {
         return `
@@ -324,7 +324,7 @@
     <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Registrations</a></li>
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./my-certificates.html" class="external">My Certificates</a></li>
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./index.html" class="external" id="logout">Sign Out</a></li>
@@ -350,9 +350,9 @@
             event.preventDefault();
 
             // You can also perform other actions here
-            sessionStorage.setItem("name", null);
-      sessionStorage.setItem("email", null);
-      sessionStorage.setItem("image", null);
+            localStorage.setItem("name", null);
+      localStorage.setItem("email", null);
+      localStorage.setItem("image", null);
       window.location.href = './index.html';
             
         });

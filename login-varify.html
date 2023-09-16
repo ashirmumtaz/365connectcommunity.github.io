@@ -178,7 +178,7 @@
     </div>
 </body>
 <script>
-    if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
+    if (localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '') {
         console.log("not signed in")
     }
     else {
@@ -186,14 +186,14 @@
         window.location.href = url;
     }
     const authorElement = document.querySelector('.author1');
-    console.log(sessionStorage.getItem("image1"))
-    if (sessionStorage.getItem("image1") == '' || sessionStorage.getItem("image1") == null || sessionStorage.getItem("image1") == 'null' || sessionStorage.getItem("image1") == 'undefined') {
+    console.log(localStorage.getItem("image1"))
+    if (localStorage.getItem("image1") == '' || localStorage.getItem("image1") == null || localStorage.getItem("image1") == 'null' || localStorage.getItem("image1") == 'undefined') {
         authorElement.style.background = 'url(https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg) center no-repeat';
     }
     else {
-        authorElement.style.background = `url(data:image/png;base64,${sessionStorage.getItem("image1")}) center no-repeat`;
+        authorElement.style.background = `url(data:image/png;base64,${localStorage.getItem("image1")}) center no-repeat`;
     }
-    var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+    var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
     function generateProfileSubMenu() {
         if (signedIn) {
             return `
@@ -211,7 +211,7 @@
     <li class="has-submenu active">
       <a href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a href="./login.html" class="external">My Registrations</a></li>
         <li><a href="./my-certificates.html" class="external">My Certificates</a></li>
         <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
@@ -237,9 +237,9 @@
             event.preventDefault();
 
             // You can also perform other actions here
-            sessionStorage.setItem("name", null);
-            sessionStorage.setItem("email", null);
-            sessionStorage.setItem("image", null);
+            localStorage.setItem("name", null);
+            localStorage.setItem("email", null);
+            localStorage.setItem("image", null);
             window.location.href = './index.html';
 
         });
@@ -247,8 +247,8 @@
     const url = new URL(url_string);
     //const email = url.searchParams.get("email");
     //const fullname = url.searchParams.get("name");
-    const email = sessionStorage.getItem("email1");
-    const fullname = sessionStorage.getItem("name1");
+    const email = localStorage.getItem("email1");
+    const fullname = localStorage.getItem("name1");
     const heading = document.getElementById("login-container");
     const text = document.createElement("input");
     text.id = "email"
@@ -297,17 +297,17 @@
                     if (response.status === 200) {
                         // Construct the URL to navigate to
                         const url = "./my-profile.html";
-                        sessionStorage.setItem("email", sessionStorage.email1);
-                        sessionStorage.setItem("name", sessionStorage.name1);
-                        sessionStorage.setItem("firstname", sessionStorage.firstname1);
-                        sessionStorage.setItem("lastname", sessionStorage.lastname1);
-                        sessionStorage.setItem("image", sessionStorage.image1);
+                        localStorage.setItem("email", localStorage.email1);
+                        localStorage.setItem("name", localStorage.name1);
+                        localStorage.setItem("firstname", localStorage.firstname1);
+                        localStorage.setItem("lastname", localStorage.lastname1);
+                        localStorage.setItem("image", localStorage.image1);
 
-                        sessionStorage.setItem("email1", null);
-                        sessionStorage.setItem("name1", null);
-                        sessionStorage.setItem("firstname1", null);
-                        sessionStorage.setItem("lastname1", null);
-                        sessionStorage.setItem("image1", null);
+                        localStorage.setItem("email1", null);
+                        localStorage.setItem("name1", null);
+                        localStorage.setItem("firstname1", null);
+                        localStorage.setItem("lastname1", null);
+                        localStorage.setItem("image1", null);
 
                         // Navigate to the desired URL
                         window.location.href = url;

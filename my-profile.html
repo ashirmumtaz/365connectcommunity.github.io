@@ -168,7 +168,7 @@
         </div>
     </footer>
     <script>
-        var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+        var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
         function generateProfileSubMenu() {
             if (signedIn) {
                 window.location.href = './login.html';
@@ -187,7 +187,7 @@
     <li class="has-submenu active">
       <a href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a href="./login.html" class="external">My Registrations</a></li>
         <li><a href="./my-certificates.html" class="external">My Certificates</a></li>
         <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
@@ -213,9 +213,9 @@
                 event.preventDefault();
 
                 // You can also perform other actions here
-                sessionStorage.setItem("name", null);
-                sessionStorage.setItem("email", null);
-                sessionStorage.setItem("image", null);
+                localStorage.setItem("name", null);
+                localStorage.setItem("email", null);
+                localStorage.setItem("image", null);
                 window.location.href = './index.html';
 
             });
@@ -249,12 +249,12 @@
 
         var crmUrl = "https://dev-shaheer.crm5.dynamics.com/";
         const authorElement = document.querySelector('.author1');
-        console.log(sessionStorage.getItem("image"))
-        if (sessionStorage.getItem("image") == '' || sessionStorage.getItem("image") == null || sessionStorage.getItem("image") == 'null' || sessionStorage.getItem("image") == 'undefined') {
+        console.log(localStorage.getItem("image"))
+        if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined') {
             authorElement.style.background = 'url(https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg) center no-repeat';
         }
         else {
-            authorElement.style.background = `url(data:image/png;base64,${sessionStorage.getItem("image")}) center no-repeat`;
+            authorElement.style.background = `url(data:image/png;base64,${localStorage.getItem("image")}) center no-repeat`;
         }
 
 
@@ -275,9 +275,9 @@
         anchorElement1.textContent = "Sign Out";
         anchorElement1.addEventListener("click", function (event) {
             event.preventDefault();
-            sessionStorage.setItem("name", null);
-            sessionStorage.setItem("email", null);
-            sessionStorage.setItem("image", null);
+            localStorage.setItem("name", null);
+            localStorage.setItem("email", null);
+            localStorage.setItem("image", null);
             window.location.href = "./index.html";
         });
         sidesDiv.appendChild(anchorElement1);
@@ -287,8 +287,8 @@
             const url = new URL(url_string);
             //   const email = url.searchParams.get("email");
             //   const fullname = url.searchParams.get("name");
-            const email = sessionStorage.getItem("email");
-            const fullname = sessionStorage.getItem("name");
+            const email = localStorage.getItem("email");
+            const fullname = localStorage.getItem("name");
             const heading = document.getElementById("info");
             const text = document.createElement("h2");
             const textsds = document.createElement("p");
@@ -522,7 +522,7 @@
         uploadButton.addEventListener('click', () => {
             document.getElementById("loading").style.display = "block";
             const selectedFile = fileInput.files[0];
-            const userEmail = sessionStorage.getItem("email"); // Replace with the actual user's email
+            const userEmail = localStorage.getItem("email"); // Replace with the actual user's email
 
             if (selectedFile) {
                 const formData = new FormData();
@@ -549,7 +549,7 @@
                     .then(data => {
                         let newimage_url = data.body.entityimage;
                         authorElement.style.background = `url(data:image/png;base64,${data.body.entityimage}) center no-repeat`;
-                        sessionStorage.setItem("image", data.body.entityimage)
+                        localStorage.setItem("image", data.body.entityimage)
                         fileUploadPopup.style.display = 'none';
                         document.getElementById("loading").style.display = "none";
                     })
@@ -623,19 +623,19 @@
         nameOpenPopupButton.addEventListener('click', (event) => {
             event.preventDefault();
             namePopup.style.display = 'flex';
-            document.getElementById("name-firstNameInput").value = sessionStorage.firstname;
-            document.getElementById("name-lastNameInput").value = sessionStorage.lastname;
+            document.getElementById("name-firstNameInput").value = localStorage.firstname;
+            document.getElementById("name-lastNameInput").value = localStorage.lastname;
         });
 
         firstNameInput.addEventListener('change', () => {
             // This function will be called when the First Name input value changes
-            if (firstNameInput.value == sessionStorage.firstname && lastNameInput.value == sessionStorage.lastname) {
+            if (firstNameInput.value == localStorage.firstname && lastNameInput.value == localStorage.lastname) {
                 updateNameButton.style.display = "none";
             }
-            else if (firstNameInput.value != sessionStorage.firstname) {
+            else if (firstNameInput.value != localStorage.firstname) {
                 updateNameButton.style.display = "inline";
             }
-            else if (firstNameInput.value != sessionStorage.lastname) {
+            else if (firstNameInput.value != localStorage.lastname) {
                 updateNameButton.style.display = "inline";
             }
 
@@ -643,13 +643,13 @@
 
         lastNameInput.addEventListener('change', () => {
             // This function will be called when the Last Name input value changes
-            if (firstNameInput.value == sessionStorage.firstname && lastNameInput.value == sessionStorage.lastname) {
+            if (firstNameInput.value == localStorage.firstname && lastNameInput.value == localStorage.lastname) {
                 updateNameButton.style.display = "none";
             }
-            else if (firstNameInput.value != sessionStorage.firstname) {
+            else if (firstNameInput.value != localStorage.firstname) {
                 updateNameButton.style.display = "inline";
             }
-            else if (firstNameInput.value != sessionStorage.lastname) {
+            else if (firstNameInput.value != localStorage.lastname) {
                 updateNameButton.style.display = "inline";
             }
         });
@@ -663,11 +663,11 @@
             document.getElementById("loading").style.display = "block";
             const firstName = firstNameInput.value;
             const lastName = lastNameInput.value;
-            if (firstNameInput.value != sessionStorage.firstname || lastNameInput.value != sessionStorage.lastname) {
+            if (firstNameInput.value != localStorage.firstname || lastNameInput.value != localStorage.lastname) {
                 document.getElementById("element-fullname").innerHTML = ` ${firstName + " " + lastName} <i class="fa fa-pencil" style="font-size:20px;" id="name-openPopup"></i>`
 
                 var myHeaders = new Headers();
-                myHeaders.append("email", sessionStorage.email);
+                myHeaders.append("email", localStorage.email);
                 myHeaders.append("firstname", firstName);
                 myHeaders.append("lastname", lastName);
 
@@ -682,8 +682,8 @@
                     .then(result => {
                         namePopup.style.display = 'none';
                         document.getElementById("loading").style.display = "none";
-                        sessionStorage.getItem("firstname", firstName);
-                        sessionStorage.getItem("lastname", lastName);
+                        localStorage.getItem("firstname", firstName);
+                        localStorage.getItem("lastname", lastName);
                     })
                     .catch(error => console.log('error', error));
                 // Close the popup

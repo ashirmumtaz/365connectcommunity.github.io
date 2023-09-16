@@ -222,9 +222,9 @@
 
     <script>
         
-        const email = sessionStorage.getItem("email");
-        const fullname = sessionStorage.getItem("name");
-        var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+        const email = localStorage.getItem("email");
+        const fullname = localStorage.getItem("name");
+        var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
     function generateProfileSubMenu() {
       if (signedIn) {
         return `
@@ -242,7 +242,7 @@
     <li class="has-submenu">
       <a href="#">Profile</a>
       <ul class="sub-menu">
-        <li><a href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a href="./login.html" class="external">My Registrations</a></li>
         <li><a href="./my-certificates.html" class="external">My Certificates</a></li>
         <li><a href="./index.html" class="external" id="logout">Sign Out</a></li>
@@ -268,9 +268,9 @@
             event.preventDefault();
 
             // You can also perform other actions here
-            sessionStorage.setItem("name", null);
-      sessionStorage.setItem("email", null);
-      sessionStorage.setItem("image", null);
+            localStorage.setItem("name", null);
+      localStorage.setItem("email", null);
+      localStorage.setItem("image", null);
       window.location.href = './index.html';
             
         });
@@ -278,7 +278,7 @@
 
 
 
-        // if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
+        // if (localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '') {
         //     console.log("notsignedin")
         // } else {
         //     document.getElementById("email").value = email;
