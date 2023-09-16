@@ -61,16 +61,20 @@
                                 class="external">Contributors</a></li>
                         <li><a style="padding: 0px 0px;text-decoration: none !important;"
                                 href="./community-members.html" class="external">Members</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./become-contributor.html" class="external">Become Contributor</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./signup.html"
+                                class="external">Become Member</a></li>
                     </ul>
                 </li>
-                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contributions</a>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Resources</a>
                     <ul class="sub-menu">
                         <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html"
                                 class="external">Events</a></li>
                         <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html"
                                 class="external">Blogs</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
-                                href="./become-contributor.html" class="external">Become Contributor</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./courses.html"
+                                class="external">Courses</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
@@ -308,7 +312,7 @@
 
             });
         isRegistered();
-        
+
         var url_string = window.location.href;
         var url = new URL(url_string);
         var id = url.searchParams.get("id");
@@ -367,7 +371,7 @@
                     document.getElementById("container").style.display = "none";
                     showError1("Registration Closed", "warning")
                 }
-                
+
             }
         }
 
@@ -514,30 +518,30 @@
             })
         }
 
-       
-function isRegistered(){
-var myHeaders = new Headers();
-myHeaders.append("email", sessionStorage.email);
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-fetch("https://prod-220.westeurope.logic.azure.com:443/workflows/66e34ad255f1445d9efae36cc77c1825/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=13kRhYkPXo5PI3kaeD9fXVgZhMqWIJwPF84o3FUMNnY", requestOptions)
-  .then(response => response.text())
-  .then(result => {
-    const filterValue = new URL(window.location.href).searchParams.get("id");
-    const count = JSON.parse(result).filter(item => item._sa_event_value === filterValue).length;
-    if(count == 0)
-    return false;
-    else{
-        document.getElementById("container").style.display = "none";
-        showError1("Already Registered", "success");
-    }
-    
-  })
-  .catch(error => console.log('error', error));
-}
+
+        function isRegistered() {
+            var myHeaders = new Headers();
+            myHeaders.append("email", sessionStorage.email);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            fetch("https://prod-220.westeurope.logic.azure.com:443/workflows/66e34ad255f1445d9efae36cc77c1825/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=13kRhYkPXo5PI3kaeD9fXVgZhMqWIJwPF84o3FUMNnY", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    const filterValue = new URL(window.location.href).searchParams.get("id");
+                    const count = JSON.parse(result).filter(item => item._sa_event_value === filterValue).length;
+                    if (count == 0)
+                        return false;
+                    else {
+                        document.getElementById("container").style.display = "none";
+                        showError1("Already Registered", "success");
+                    }
+
+                })
+                .catch(error => console.log('error', error));
+        }
 
 
     </script>

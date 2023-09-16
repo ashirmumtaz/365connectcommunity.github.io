@@ -67,13 +67,15 @@ https://templatemo.com/tm-557-grad-school
           <ul class="sub-menu">
             <li><a href="./team-members.html" class="external">Contributors</a></li>
             <li><a href="./community-members.html" class="external">Members</a></li>
+            <li><a href="./become-contributor.html" class="external">Become Contributor</a></li>
+            <li><a href="./signup.html" class="external">Become Member</a></li>
           </ul>
         </li>
-        <li class="has-submenu"><a href="#">Contributions</a>
+        <li class="has-submenu"><a href="#">Resources</a>
           <ul class="sub-menu">
             <li><a href="./events.html" class="external">Events</a></li>
             <li><a href="./blog.html" class="external">Blogs</a></li>
-            <li><a href="./become-contributor.html" class="external">Become Contributor</a></li>
+            <li><a href="./courses.html" class="external">Courses</a></li>
           </ul>
         </li>
         <li class="has-submenu"><a href="#">Contact Us</a>
@@ -182,6 +184,13 @@ https://templatemo.com/tm-557-grad-school
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js"></script>
   <script>
+    if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
+        console.log("not signed in")
+    }
+    else {
+        let url = "./my-profile.html";
+        window.location.href = url;
+    }
     const email = sessionStorage.getItem("email");
     const fullname = sessionStorage.getItem("name");
 
