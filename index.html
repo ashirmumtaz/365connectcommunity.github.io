@@ -72,6 +72,7 @@ https://templatemo.com/tm-557-grad-school
           <ul class="sub-menu">
             <li><a href="./support.html" class="external">Get Support</a></li>
             <li><a href="./index.html" class="external">Seek Guidance</a></li>
+            <li><a href="./our-socials.html" class="external">Our Socials</a></li>
           </ul>
         </li>
       </ul>
@@ -609,6 +610,7 @@ https://templatemo.com/tm-557-grad-school
       <a href="#">Profile</a>
       <ul class="sub-menu">
         <li><a href="./login.html" class="external">Sign In</a></li>
+        <li><a href="./signup.html" class="external">Sign Up</a></li>
       </ul>
     </li>
   `;
@@ -627,10 +629,10 @@ https://templatemo.com/tm-557-grad-school
   `;
       }
     }
-    
 
-        // Add a click event listener
-        
+
+    // Add a click event listener
+
 
     // Find the parent ul element with the class "main-menu"
     const mainMenu = document.querySelector('.main-menu');
@@ -638,18 +640,18 @@ https://templatemo.com/tm-557-grad-school
     // Append the "Profile" submenu HTML to the mainMenu
     mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
     const myLink = document.getElementById('logout');
-    if(document.getElementById('logout'))
-    myLink.addEventListener('click', function (event) {
-            // Prevent the default behavior (e.g., navigating to the href URL)
-            event.preventDefault();
+    if (document.getElementById('logout'))
+      myLink.addEventListener('click', function (event) {
+        // Prevent the default behavior (e.g., navigating to the href URL)
+        event.preventDefault();
 
-            // You can also perform other actions here
-            sessionStorage.setItem("name", null);
-      sessionStorage.setItem("email", null);
-      sessionStorage.setItem("image", null);
-      window.location.href = './index.html';
-            
-        });
+        // You can also perform other actions here
+        sessionStorage.setItem("name", null);
+        sessionStorage.setItem("email", null);
+        sessionStorage.setItem("image", null);
+        window.location.href = './index.html';
+
+      });
     /////
     document.getElementById("loading").style.display = "none";
     if (screen.height > screen.width) {
@@ -795,18 +797,23 @@ https://templatemo.com/tm-557-grad-school
         };
 
         fetch("https://prod-81.westeurope.logic.azure.com:443/workflows/a8d5d8b3b2814ba49b821f72867f9fd9/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8_KyqUMf_INSyP35K0GBnSGrghCdXcubKW4h6HsGBvI", requestOptions)
-          .then(response => console.log("Error"))
-          .then(result => {
-            showError1("You have been registered. You can now login using your email.", "success")
-            reg_firstname.style.display = "none";
-            reg_lastname.style.display = "none";
-            reg_email.style.display = "none";
-            reg_phone.style.display = "none";
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("register-button").style.display = "none";
+          .then(response => {
+            if (response.status == 200) {
+              showError1("You have been registered. You can now login using your email. Navigate to Sign-In...", "success")
+              reg_firstname.style.display = "none";
+              reg_lastname.style.display = "none";
+              reg_email.style.display = "none";
+              reg_phone.style.display = "none";
+              document.getElementById("loading").style.display = "none";
+              document.getElementById("register-button").style.display = "none";
+            }
+            else {
+              showError1("Registration Failed. Already Registered.", "danger")
+              document.getElementById("loading").style.display = "none";
+            }
           })
           .catch(error => {
-            showError1("Registration failed. Try again.", "danger")
+            showError1("Registration Failed. Already Registered.", "danger")
             document.getElementById("loading").style.display = "none";
           });
 

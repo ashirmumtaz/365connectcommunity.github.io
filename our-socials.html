@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta property="og:title" content="365Connect Community">
+    <meta property="og:description"
+        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+    <meta property="og:image" content="https://365connectcommunity.github.io/preview.png">
+    <meta property="og:url" content="https://365connectcommunity.github.io/">
+
+    <!---->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+    <meta name="author" content="Shaheer Ahmad"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Socials | 365Connect Community</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Add custom styles for the content */
+        body {
+            background-color: #172238;
+            color: #fff;
+            height: auto;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 15%;
+            margin-bottom: 15%;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-title {
+            font-size: 42px;
+            color: #feb70c;
+            /* Primary color (orange) */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .content-subtitle {
+            font-size: 24px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .content-text {
+            font-size: 18px;
+            color: #fff;
+            /* Text color changed to white for readability */
+        }
+
+        /* Add styling for the steps */
+        .step {
+            margin-top: 50px;
+        }
+
+        .step-number {
+            font-size: 24px;
+            color: #feb70c;
+            /* Primary color (orange) */
+            font-weight: bold;
+        }
+
+        .step-description {
+            font-size: 26px;
+            color: #fff;
+            /* Text color changed to white for readability */
+            margin-left: 40px;
+        }
+
+        /* Absolute Center Spinner */
+        .loading {
+            position: fixed;
+            z-index: 999099999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+
+            background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        }
+
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 150ms infinite linear;
+            -moz-animation: spinner 150ms infinite linear;
+            -ms-animation: spinner 150ms infinite linear;
+            -o-animation: spinner 150ms infinite linear;
+            animation: spinner 150ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+        }
+
+        @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <img id="header-logo" style="height: 50px; margin-right: 20px;" src="./favicon.ico">
+            <a href="./index.html" style="text-decoration: none; font-size: 29px !important;"><em></em><span
+                    style="color: #feb70c;">3</span><span style="color: #5ea904;">6</span><span
+                    style="color: #04a0ed;">5</span><span style="color: white;">C</span><span
+                    style="text-transform: lowercase;">onnect</span></a><!--#ce392c;-->
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Our Family</a>
+                    <ul class="sub-menu">
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html"
+                                class="external">Contributors</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./community-members.html" class="external">Members</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu active"><a style="text-decoration: none !important;" href="#">Contributions</a>
+                    <ul class="sub-menu">
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html"
+                                class="external">Events</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html"
+                                class="external">Blogs</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./become-contributor.html" class="external">Become Contributor</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
+                    <ul class="sub-menu">
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html"
+                                class="external">Get Support</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html"
+                                class="external">Seek Guidance</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./our-socials.html"
+                                class="external">Our Socials</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="loading" id="loading">Loading&#8230;</div>
+
+
+    <div class="content-container">
+        <div class="content">
+            <div class="content-title">Our Socials</div>
+            <div class="content-text">We're thrilled that you want to connect with us on social media and stay updated
+                with our community's activities. You can follow us on the following social media platforms to be part of
+                our journey:
+            </div>
+            <br>
+            <div class="social-media-list">
+                <!-- Generate social media links here using JavaScript -->
+            </div>
+            <br>
+
+            <br>
+            <div class="content-text">Together, we can make the 365Connect Community a vibrant hub for D365 and Power
+                Platform enthusiasts. Get started today and help us grow!</div>
+        </div>
+    </div>
+    <!-- Site footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2023 by 365Connect Community
+
+                        | Design: <a href="https://www.linkedin.com/in/shaheer-ahmad-ch" rel="sponsored"
+                            target="_parent">Shaheer Ahmad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var requestOptions = {
+            method: 'POST',
+            redirect: 'follow'
+        };
+
+        fetch("https://prod-28.westeurope.logic.azure.com:443/workflows/e28efca878834c46a6645e91cf3b0d2b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Ju80x0se3WdkwWEDVhAHG8vqTQkr41IchGxcbdnrW94", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                const socialMediaList = JSON.parse(result);
+                const socialMediaContainer = document.querySelector('.social-media-list');
+
+                // Generate and add social media links
+                socialMediaList.forEach((platform, index) => {
+                    const socialMediaLink = document.createElement('div');
+                    socialMediaLink.classList.add('step');
+
+                    socialMediaLink.innerHTML = `
+            <span class="step-number">${index + 1}.</span>
+            <span class="step-description">${platform.sa_name}:</span>
+            <div class="content-text">
+                <p class="content-text" style="margin-left: 40px;margin-top: 10px;">
+                    <a href="${platform.sa_url}" style="color: orange;">Click Here</a>
+                </p>
+                <ol style="list-style-type: decimal; margin-left: 60px;"></ol>
+            </div>
+        `;
+
+                    socialMediaContainer.appendChild(socialMediaLink);
+                });
+            })
+            .catch(error => console.log('error', error));
+
+
+
+        // Get the container where you want to add the social media links
+
+        ////////////
+
+        const email = sessionStorage.getItem("email");
+        const fullname = sessionStorage.getItem("name");
+
+        var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
+        function generateProfileSubMenu() {
+            if (signedIn) {
+                return `
+        <li class="has-submenu">
+      <a style="text-decoration: none !important;" href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">Sign In</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./signup.html" class="external">Sign Up</a></li>
+      </ul>
+    </li>
+  `;
+            }
+            else {
+                return `
+    <li class="has-submenu">
+      <a style="text-decoration: none !important;" href="#">Profile</a>
+      <ul class="sub-menu">
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${sessionStorage.firstname}</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Registrations</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./my-certificates.html" class="external">My Certificates</a></li>
+        <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./index.html" class="external" id="logout">Sign Out</a></li>
+      </ul>
+    </li>
+  `;
+            }
+        }
+
+
+        // Add a click event listener
+
+
+        // Find the parent ul element with the class "main-menu"
+        const mainMenu = document.querySelector('.main-menu');
+
+        // Append the "Profile" submenu HTML to the mainMenu
+        mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+        const myLink = document.getElementById('logout');
+        if (document.getElementById('logout'))
+            myLink.addEventListener('click', function (event) {
+                // Prevent the default behavior (e.g., navigating to the href URL)
+                event.preventDefault();
+
+                // You can also perform other actions here
+                sessionStorage.setItem("name", null);
+                sessionStorage.setItem("email", null);
+                sessionStorage.setItem("image", null);
+                window.location.href = './index.html';
+
+            });
+
+
+
+
+        // if (sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '') {
+        //     console.log("notsignedin")
+        // } else {
+        //     document.getElementById("email").value = email;
+        //     document.getElementById("name").value = fullname;
+        //     document.getElementById("email").disabled = true;
+        //     document.getElementById("name").disabled = true;
+        // }
+        document.getElementById("loading").style.display = "none";
+
+        if (screen.height > screen.width) {
+            document.getElementById("header-logo").hidden = true;
+            document.querySelector(".menu-link").classList.remove("active");
+            document.querySelector(".main-nav").classList.remove("active");
+            document.querySelector(".main-nav").style.overflow = 'scroll';
+            document.querySelector(".main-nav").style.height = 'inherit';
+            document.querySelector(".main-nav").style.minHeight = '90vh';
+            document.querySelector(".main-menu").hidden = true;
+            document.querySelector(".fa").addEventListener("click", function () {
+                if (document.querySelector(".menu-link").classList.value.includes("active")) {
+                    document.querySelector(".menu-link").classList.remove("active");
+                    document.querySelector(".main-nav").classList.remove("active");
+                    document.querySelector(".main-menu").hidden = false;
+                }
+                else {
+                    document.querySelector(".menu-link").classList.add("active");
+                    document.querySelector(".main-nav").classList.add("active");
+                    document.querySelector(".main-menu").hidden = true;
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>
