@@ -3,7 +3,8 @@
 
 <head>
     <meta property="og:title" content="365Connect Community">
-    <meta property="og:description" content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+    <meta property="og:description"
+        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
     <meta property="og:image" content="https://365connectcommunity.github.io/preview.png">
     <meta property="og:url" content="https://365connectcommunity.github.io/">
 
@@ -51,28 +52,36 @@
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
-                
+
                 <li class="active"><a style="text-decoration: none !important;" href="#">Register</a></li>
                 <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
                 <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Our Family</a>
                     <ul class="sub-menu">
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html" class="external">Contributors</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./community-members.html" class="external">Members</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html"
+                                class="external">Contributors</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./community-members.html" class="external">Members</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contributions</a>
                     <ul class="sub-menu">
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html" class="external">Blogs</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./become-contributor.html" class="external">Become Contributor</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html"
+                                class="external">Events</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html"
+                                class="external">Blogs</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./become-contributor.html" class="external">Become Contributor</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
                     <ul class="sub-menu">
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html" class="external">Get Support</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html" class="external">Seek Guidance</a></li>
-                        
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./our-socials.html" class="external">Our Socials</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html"
+                                class="external">Get Support</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html"
+                                class="external">Seek Guidance</a></li>
+
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./our-socials.html"
+                                class="external">Our Socials</a></li>
                     </ul>
                 </li>
             </ul>
@@ -195,7 +204,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
-                            <p class="btn btn-primary btn-lg" style="background-color: orange !important; border-color: orange !important;"  onclick="submitForm()" id="submit-button">Register <span
+                            <p class="btn btn-primary btn-lg"
+                                style="background-color: orange !important; border-color: orange !important;"
+                                onclick="submitForm()" id="submit-button">Register <span
                                     class="glyphicon glyphicon-send"></span></p>
                         </div>
                     </div>
@@ -217,7 +228,8 @@
             <p><strong>Status:</strong> <span id="event-status"></span></p>
             <p><strong>Type:</strong> <span id="event-type"></span></p>
             <p><strong>Description:</strong> <span id="event-description"></span></p>
-            <a href="#" id="register-now-link" target="_blank"><button class="register-now" style="background-color: orange !important;">Register Now</button></a>
+            <a href="#" id="register-now-link" target="_blank"><button class="register-now"
+                    style="background-color: orange !important;">Register Now</button></a>
         </div>
 
     </section>
@@ -237,9 +249,9 @@
 
     <script>
         var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
-    function generateProfileSubMenu() {
-      if (signedIn) {
-        return `
+        function generateProfileSubMenu() {
+            if (signedIn) {
+                return `
         <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
@@ -248,18 +260,18 @@
       </ul>
     </li>
   `;
-      }
-      else {
-        document.getElementById("firstname").value = sessionStorage.firstname;
-            document.getElementById("lastname").value = sessionStorage.lastname;
-            document.getElementById("email").value = sessionStorage.email;
-            document.getElementById("lbl-email").innerText = "Signed-In as:"
-            document.getElementById("email").disabled = true;
-            document.getElementById("firstname").disabled = true;
-            document.getElementById("lastname").disabled = true;
-            document.getElementById("phone").style.display="none";
-            document.getElementById("lbl-phone").style.display="none";
-        return `
+            }
+            else {
+                document.getElementById("firstname").value = sessionStorage.firstname;
+                document.getElementById("lastname").value = sessionStorage.lastname;
+                document.getElementById("email").value = sessionStorage.email;
+                document.getElementById("lbl-email").innerText = "Signed-In as:"
+                document.getElementById("email").disabled = true;
+                document.getElementById("firstname").disabled = true;
+                document.getElementById("lastname").disabled = true;
+                document.getElementById("phone").style.display = "none";
+                document.getElementById("lbl-phone").style.display = "none";
+                return `
     <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
@@ -270,40 +282,36 @@
       </ul>
     </li>
   `;
-      }
-    }
-    
+            }
+        }
+
 
         // Add a click event listener
+
+
+        // Find the parent ul element with the class "main-menu"
+        const mainMenu = document.querySelector('.main-menu');
+
+        // Append the "Profile" submenu HTML to the mainMenu
+        mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+        const myLink = document.getElementById('logout');
+        if (document.getElementById('logout'))
+            myLink.addEventListener('click', function (event) {
+                // Prevent the default behavior (e.g., navigating to the href URL)
+                event.preventDefault();
+
+                // You can also perform other actions here
+                sessionStorage.setItem("name", null);
+                sessionStorage.setItem("email", null);
+                sessionStorage.setItem("image", null);
+                window.location.href = './index.html';
+
+            });
+        isRegistered();
         
-
-    // Find the parent ul element with the class "main-menu"
-    const mainMenu = document.querySelector('.main-menu');
-
-    // Append the "Profile" submenu HTML to the mainMenu
-    mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
-    const myLink = document.getElementById('logout');
-    if(document.getElementById('logout'))
-    myLink.addEventListener('click', function (event) {
-            // Prevent the default behavior (e.g., navigating to the href URL)
-            event.preventDefault();
-
-            // You can also perform other actions here
-            sessionStorage.setItem("name", null);
-      sessionStorage.setItem("email", null);
-      sessionStorage.setItem("image", null);
-      window.location.href = './index.html';
-            
-        });
-
-
-
-
-        document.getElementById("loading").style.display = "none";
         var url_string = window.location.href;
         var url = new URL(url_string);
         var id = url.searchParams.get("id");
-        var showReg = url.searchParams.get("reg");
         var myHeaders = new Headers();
         myHeaders.append("guid", id);
 
@@ -329,7 +337,7 @@
                 }
             } catch (error) {
                 showError1("Event not found", "warning");
-
+                document.getElementById("loading").style.display = "block"
                 document.getElementById("container").style.display = "none";
                 return [];
             }
@@ -339,7 +347,7 @@
         async function fetchData() {
             const eventList = document.getElementById("event-list");
             const event = await fetchEventData();
-
+            document.getElementById("loading").style.display = "none";
             if (event && event.length != 0) {
                 const fragment = document.createDocumentFragment(); // Create a document fragment
                 const listItem = document.createElement("li");
@@ -359,10 +367,7 @@
                     document.getElementById("container").style.display = "none";
                     showError1("Registration Closed", "warning")
                 }
-                if (showReg == 'false') {
-                    document.getElementById("container").style.display = "none";
-                    showError1("Already Registered", "success")
-                }
+                
             }
         }
 
@@ -486,77 +491,53 @@
                 return `${hours} hours`; // Less than 24 hours, return hours only
             }
         }
-        
-        if (screen.height > screen.width){
+
+        if (screen.height > screen.width) {
             document.getElementById("header-logo").hidden = true;
-        document.querySelector(".menu-link").classList.remove("active");
-        document.querySelector(".main-nav").classList.remove("active");
+            document.querySelector(".menu-link").classList.remove("active");
+            document.querySelector(".main-nav").classList.remove("active");
             document.querySelector(".main-nav").style.overflow = 'scroll';
             document.querySelector(".main-nav").style.height = 'inherit';
             document.querySelector(".main-nav").style.minHeight = '90vh';
-        document.querySelector(".main-menu").hidden = true;
-        document.querySelector(".fa").addEventListener("click", function () {
-            if(document.querySelector(".menu-link").classList.value.includes("active")){
-                document.querySelector(".menu-link").classList.remove("active");
-                document.querySelector(".main-nav").classList.remove("active");
-                document.querySelector(".main-menu").hidden = false;
-            }
-            else{
-            document.querySelector(".menu-link").classList.add("active");
-            document.querySelector(".main-nav").classList.add("active");
             document.querySelector(".main-menu").hidden = true;
-            }
-        })
+            document.querySelector(".fa").addEventListener("click", function () {
+                if (document.querySelector(".menu-link").classList.value.includes("active")) {
+                    document.querySelector(".menu-link").classList.remove("active");
+                    document.querySelector(".main-nav").classList.remove("active");
+                    document.querySelector(".main-menu").hidden = false;
+                }
+                else {
+                    document.querySelector(".menu-link").classList.add("active");
+                    document.querySelector(".main-nav").classList.add("active");
+                    document.querySelector(".main-menu").hidden = true;
+                }
+            })
+        }
+
+       
+function isRegistered(){
+var myHeaders = new Headers();
+myHeaders.append("email", sessionStorage.email);
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+fetch("https://prod-220.westeurope.logic.azure.com:443/workflows/66e34ad255f1445d9efae36cc77c1825/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=13kRhYkPXo5PI3kaeD9fXVgZhMqWIJwPF84o3FUMNnY", requestOptions)
+  .then(response => response.text())
+  .then(result => {
+    const filterValue = new URL(window.location.href).searchParams.get("id");
+    const count = JSON.parse(result).filter(item => item._sa_event_value === filterValue).length;
+    if(count == 0)
+    return false;
+    else{
+        document.getElementById("container").style.display = "none";
+        showError1("Already Registered", "success");
     }
-
-        // $('.nav li:first').addClass('active');
-
-        // var showSection = function showSection(section, isAnimate) {
-        //   var
-        //   direction = section.replace(/#/, ''),
-        //   reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-        //   reqSectionPos = reqSection.offset().top - 0;
-
-        //   if (isAnimate) {
-        //     $('body, html').animate({
-        //       scrollTop: reqSectionPos },
-        //     800);
-        //   } else {
-        //     $('body, html').scrollTop(reqSectionPos);
-        //   }
-
-        // };
-
-        // var checkSection = function checkSection() {
-        //   $('.section').each(function () {
-        //     var
-        //     $this = $(this),
-        //     topEdge = $this.offset().top - 80,
-        //     bottomEdge = topEdge + $this.height(),
-        //     wScroll = $(window).scrollTop();
-        //     if (topEdge < wScroll && bottomEdge > wScroll) {
-        //       var
-        //       currentId = $this.data('section'),
-        //       reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-        //       reqLink.closest('li').addClass('active').
-        //       siblings().removeClass('active');
-        //     }
-        //   });
-        // };
-
-        // $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
-        //   if($(e.target).hasClass('external')) {
-        //     return;
-        //   }
-        //   e.preventDefault();
-        //   $('#menu').removeClass('active');
-        //   showSection($(this).attr('href'), true);
-        // });
-
-        // $(window).scroll(function () {
-        //   checkSection();
-        // });
-
+    
+  })
+  .catch(error => console.log('error', error));
+}
 
 
     </script>
