@@ -2,178 +2,207 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
-    <meta name="author" content="Shaheer Ahmad">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
-        rel="stylesheet">
+  <meta property="og:title" content="365Connect Community">
+  <meta property="og:description"
+    content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+  <meta property="og:image" content="https://365connectcommunity.github.io/preview.png">
+  <meta property="og:url" content="https://365connectcommunity.github.io/">
 
+  <!---->
 
-    <!-- Bootstrap core CSS -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <!-- <meta charset="utf-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--<meta name="description"
+    content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+  <meta name="author" content="Shaheer Ahmad">
+  <meta property="og:image" content="URL to your page's image thumbnail"> -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | 365Connect Community</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Sign-In | 365Connect Community</title>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333; /* You can change the background color as needed */
-        color: #fff; /* You can change the text color as needed */
-        text-align: center;
-        padding: 10px 0;
-    }
-        body {
-            font-family: Arial, sans-serif;
-            background: url(./assets/images/contact-bg.jpg);
-            margin: 0;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background-color: rgba(256,256,256,.1);
-            backdrop-filter: blur(16px);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px -15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #152137;
-            color: white;
-        }
-
-        .login-container button {
-            background-color: orange;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .login-container button:hover {
-            background-color: #0056b3;
-        }
-
-        .login-container p {
-            margin-top: 10px;
-            color: #888;
-        }
-
-        .in-put {
-            height: 30px;
-        }
-
-        .bntn {
-            height: 40px;
-            width: 100px;
-        }
-
-        .alert {
-            background-color: coral;
-            width: 100%;
-            padding: 10px;
-            margin-left: -10px;
-            margin-top: 10px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header class="main-header clearfix" role="header">
-        <div class="logo">
-            <img id="header-logo" style="height: 50px; margin-right: 20px;" src="./favicon.ico">
-            <a href="./index.html" style="text-decoration: none; font-size: 29px !important;"><em></em><span
-                    style="color: #feb70c;">3</span><span style="color: #5ea904;">6</span><span
-                    style="color: #04a0ed;">5</span><span style="color: white;">C</span><span
-                    style="text-transform: lowercase;">onnect</span></a><!--#ce392c;-->
-        </div>
-        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-        <nav id="menu" class="main-nav" role="navigation">
-            <ul class="main-menu">
-                <li><a href="./index.html">Home</a></li>
-                <li class="has-submenu"><a href="#">Our Family</a>
-                    <ul class="sub-menu">
-                        <li><a href="./team-members.html" class="external">Contributors</a></li>
-                        <li><a href="./community-members.html" class="external">Members</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu"><a href="#">Contributions</a>
-                    <ul class="sub-menu">
-                        <li><a href="./events.html" class="external">Events</a></li>
-                        <li><a href="./blog.html" class="external">Blogs</a></li>
-                        <li><a href="./become-contributor.html" class="external">Become Contributor</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu"><a href="#">Contact Us</a>
-                    <ul class="sub-menu">
-                        <li><a href="./support.html" class="external">Get Support</a></li>
-                        <li><a href="./index.html" class="external">Seek Guidance</a></li>
-                        <li><a href="./our-socials.html" class="external">Our Socials</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="loading" id="loading">Loading&#8230;</div>
-    <div class="login-container">
-        <h2>Continue with Email</h2>
-        <hr><br>
-        <input class="in-put" type="text" placeholder="Email" id="email"><br><br><br>
-        <button class="bntn" onclick="submit()">Continue</button>
-        <div class="message" id="message">
-        </div>
-    </div>
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <!--
     
-</body>
-<script>
+TemplateMo 557 Grad School
+
+https://templatemo.com/tm-557-grad-school
+
+-->
+</head>
+<style>
+  body{
+    height: auto;
+  }
+  html{
+    height: 100vh;
+  }
+</style>
+
+<body>
+  <h1 style="display: none;">365Connect Community</h1>
+
+  <div class="loading" id="loading">Loading&#8230;</div>
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <img id="header-logo" style="height: 50px; margin-right: 20px;" src="./favicon.ico">
+      <a href="./index.html" style=" font-size: 29px !important;"><em></em><span style="color: #feb70c;">3</span><span
+          style="color: #5ea904;">6</span><span style="color: #04a0ed;">5</span><span
+          style="color: white;">C</span><span style="text-transform: lowercase;">onnect</span></a><!--#ce392c;-->
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="#section1">Home</a></li>
+        <li class="has-submenu"><a href="#">Our Family</a>
+          <ul class="sub-menu">
+            <li><a href="./team-members.html" class="external">Contributors</a></li>
+            <li><a href="./community-members.html" class="external">Members</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="#">Contributions</a>
+          <ul class="sub-menu">
+            <li><a href="./events.html" class="external">Events</a></li>
+            <li><a href="./blog.html" class="external">Blogs</a></li>
+            <li><a href="./become-contributor.html" class="external">Become Contributor</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="#">Contact Us</a>
+          <ul class="sub-menu">
+            <li><a href="./support.html" class="external">Get Support</a></li>
+            <li><a href="./index.html" class="external">Seek Guidance</a></li>
+            <li><a href="./our-socials.html" class="external">Our Socials</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <section class="section coming-soon" data-section="section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <br><br><br>
+          <div class="continer centerIt">
+            <div><br>
+              <h4>Sign-In to your free account and <em>get immediate</em> access to your registrations and certifications.</h4>
+              <!--
+              <div class="counter">
+
+                <div class="days">
+                  <div class="value">00</div>
+                  <span>Days</span>
+                </div>
+
+                <div class="hours">
+                  <div class="value">00</div>
+                  <span>Hours</span>
+                </div>
+
+                <div class="minutes">
+                  <div class="value">00</div>
+                  <span>Minutes</span>
+                </div>
+
+                <div class="seconds">
+                  <div class="value">00</div>
+                  <span>Seconds</span>
+                </div>
+
+              </div>
+              -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="right-content">
+            <div class="top-content">
+              <h6>Sign-In to your free account and <em>get immediate</em> access to your registrations and certifications.</h6>
+            </div>
+            <form id="contact" action="" method="get">
+              <div class="row">
+                
+                <div class="col-md-12">
+                  <fieldset>
+                    <input name="email" type="text" class="form-control" id="email" placeholder="Your Email"
+                      required="">
+                  </fieldset>
+                </div>
+                <br><br>
+                <div class="col-md-12">
+                  <fieldset>
+                    <p class="btn" style="background-color: orange !important;" onclick="submit()"
+                      id="register-button">Continue with Email</p>
+                  </fieldset>
+                  <p>Don't have an account? <a href="./signup.html">Sign-Up Here</a></p>
+                  <div class="message" id="message1">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><i class="fa fa-copyright"></i> Copyright 2023 by 365Connect Community
+
+            | Design: <a href="https://www.linkedin.com/in/shaheer-ahmad-ch" rel="sponsored" target="_parent">Shaheer
+              Ahmad</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
     const email = sessionStorage.getItem("email");
     const fullname = sessionStorage.getItem("name");
-    if(sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null'|| sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == ''){
-        console.log("not signed in")
+
+
+    ///////
+    function showError(alert, alertType) {
+            var message = document.getElementById("message1");
+            var messagetext = document.createElement("div");
+            messagetext.classList.add("alert")
+            messagetext.classList.add("alert-" + alertType)
+            messagetext.textContent = alert;
+            message.appendChild(messagetext);
+        }
+
+    if (screen.height > screen.width) {
+      document.querySelector(".video-item").hidden = true;
+      document.getElementById("header-logo").hidden = true;
     }
-    else{
-        let url = "./my-profile.html";
-        window.location.href = url;
-    }
+
+    ///////////////
+    // Menu data structure
     var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
     function generateProfileSubMenu() {
       if (signedIn) {
@@ -224,21 +253,22 @@
       window.location.href = './index.html';
             
         });
+    /////
     document.getElementById("loading").style.display = "none";
+    if (screen.height > screen.width) {
+      document.querySelector(".video-item").hidden = true;
+      document.getElementById("header-logo").hidden = true;
+    }
+
+
+
     function submit() {
         
-        var myDiv = document.getElementById("message");
-        var headingToDelete = document.querySelector(".alert");
-        if (headingToDelete) {
-            myDiv.removeChild(headingToDelete);
-        }
-        var myDiv = document.getElementById("message");
-        var headingToDelete = document.querySelector(".alert");
-        if (headingToDelete) {
-            myDiv.removeChild(headingToDelete);
-        }
+      while (document.querySelector(".alert")) {
+        document.querySelector('.alert').parentElement.removeChild(document.querySelector(".alert"));
+      }
         if (document.getElementById("email").value == '')
-            showError("Email is required")
+            showError("Email is required","danger")
         if (document.getElementById("email").value != '') {
             document.getElementById("loading").style.display = "block";
             var myHeaders = new Headers();
@@ -257,7 +287,7 @@
                         return response.json();
                     } else {
                         // Handle other response statuses or errors here
-                        showError("Account not found");
+                        showError("Account not found","danger");
                         document.getElementById("loading").style.display = "none";
                         return null;
                     }
@@ -285,43 +315,14 @@
                     }
                 })
                 .catch(error => {
-                    showError("Account not found");
+                    showError("Account not found","dager");
                     document.getElementById("loading").style.display = "none";
                 });
 
             }
             //window.location.replace("./registrations.html?email="+document.getElementById("email").value)
         }
-        function showError(alert, alertType) {
-            var message = document.getElementById("message");
-            var messagetext = document.createElement("div");
-            messagetext.classList.add("alert")
-            messagetext.classList.add("alert-" + alertType)
-            messagetext.textContent = alert;
-            message.appendChild(messagetext);
-        }
-        
-        if (screen.height > screen.width){
-            document.getElementById("header-logo").hidden = true;
-        document.querySelector(".menu-link").classList.remove("active");
-        document.querySelector(".main-nav").classList.remove("active");
-            document.querySelector(".main-nav").style.overflow = 'scroll';
-            document.querySelector(".main-nav").style.height = 'inherit';
-            document.querySelector(".main-nav").style.minHeight = '90vh';
-        document.querySelector(".main-menu").hidden = true;
-        document.querySelector(".fa").addEventListener("click", function () {
-            if(document.querySelector(".menu-link").classList.value.includes("active")){
-                document.querySelector(".menu-link").classList.remove("active");
-                document.querySelector(".main-nav").classList.remove("active");
-                document.querySelector(".main-menu").hidden = false;
-            }
-            else{
-            document.querySelector(".menu-link").classList.add("active");
-            document.querySelector(".main-nav").classList.add("active");
-            document.querySelector(".main-menu").hidden = true;
-            }
-        })
-    }
-</script>
+  </script>
+</body>
 
 </html>
