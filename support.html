@@ -134,12 +134,23 @@
 
                     <div class="form-group">
                         <label class="col-md-4 control-label"
-                            style="margin-bottom:10px !important; margin-top: 10px !important; font-weight: 600;color: white !important;">Full
+                            style="margin-bottom:10px !important; margin-top: 10px !important; font-weight: 600;color: white !important;">First
                             Name</label>
                         <div class="col-md-4 inputGroupContainer" style="width: 100% !important;">
                             <div class="input-group" style="height: 50px !important; margin-bottom:10px !important;">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="first_name" placeholder="" id="name" class="form-control" type="text">
+                                <input name="first_name" placeholder="" id="firstname" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"
+                            style="margin-bottom:10px !important; margin-top: 10px !important; font-weight: 600;color: white !important;">Last
+                            Name</label>
+                        <div class="col-md-4 inputGroupContainer" style="width: 100% !important;">
+                            <div class="input-group" style="height: 50px !important; margin-bottom:10px !important;">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input name="first_name" placeholder="" id="lastname" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -200,13 +211,13 @@
                                 id="submit-button">Submit <span class="glyphicon glyphicon-send"></span></p>
                         </div>
                     </div>
-
+                    <div class="message" id="message-alert"></div>
                 </fieldset>
             </form>
         </div>
         <br><br><br>
         </div><!-- /.container -->
-        <div class="message" id="message">
+        
         </div>
 
     </section>
@@ -232,7 +243,7 @@
         var signedIn = sessionStorage.getItem("name") == null || sessionStorage.getItem("email") == null || sessionStorage.getItem("email") == 'null' || sessionStorage.getItem("name") == 'null' || sessionStorage.getItem("email") == '' || sessionStorage.getItem("name") == '' || sessionStorage.getItem("email") == undefined || sessionStorage.getItem("name") == undefined;
         function generateProfileSubMenu() {
             if (signedIn) {
-                window.location.href = './login.html';
+                //window.location.href = './login.html';
                 return `
         <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
@@ -287,9 +298,11 @@
             console.log("notsignedin")
         } else {
             document.getElementById("email").value = email;
-            document.getElementById("name").value = fullname;
+            document.getElementById("firstname").value = sessionStorage.firstname;
+            document.getElementById("lastname").value = sessionStorage.lastname;
             document.getElementById("email").disabled = true;
-            document.getElementById("name").disabled = true;
+            document.getElementById("firstname").disabled = true;
+            document.getElementById("lastname").disabled = true;
         }
         document.getElementById("loading").style.display = "none";
 
@@ -297,16 +310,22 @@
         function submitForm() {
             document.getElementById("loading").style.display = "block";
             while (document.querySelector(".alert")) {
-                document.getElementById("message").removeChild(document.querySelector(".alert"))
+                document.getElementById("message-alert").removeChild(document.querySelector(".alert"))
             }
 
-            var name = document.getElementById("name").value
+            var firstname = document.getElementById("firstname").value
+            var lastname = document.getElementById("lastname").value
             var email = document.getElementById("email").value
             var subject = document.getElementById("subject").value
             var message = document.getElementById("message").value
 
-            if (name == '') {
-                showError("Name is Required", "danger")
+            if (firstname == '') {
+                showError("First name is Required", "danger")
+                document.getElementById("loading").style.display = "none";
+
+            }
+            if (lastname == '') {
+                showError("Last name is Required", "danger")
                 document.getElementById("loading").style.display = "none";
 
             }
@@ -325,11 +344,12 @@
                 document.getElementById("loading").style.display = "none";
 
             }
-            if (name != '' && email != '' && message != '' && subject != '') {
+            if (firstname != '' && lastname != '' && email != '' && message != '' && subject != '') {
                 document.getElementById("loading").style.display = "block";
 
                 var myHeaders = new Headers();
-                myHeaders.append("name", name);
+                myHeaders.append("firstname", firstname);
+                myHeaders.append("lastname", lastname);
                 myHeaders.append("email", email);
                 myHeaders.append("subject", subject);
                 myHeaders.append("message", message);
@@ -344,32 +364,29 @@
                     .then(response => {
                         if (response.status === 200) {
                             // Registration was successful
-                            alert("Success. Your request has been sent. You'll recieve an email shortly");
                             showError("Success. Your request has been sent. You'll recieve an email shortly", "success");
                             document.getElementById("loading").style.display = "none";
                         } else {
                             // Handle other response codes (e.g., display an error message)
-                            alert("Error.")
                             showError("Error.", "danger")
                             document.getElementById("loading").style.display = "none";
                         }
                     })
                     .then(result => {
-                        alert("Success. Your request has been sent. You'll recieve an email shortly");
                         showError("Success. Your request has been sent. You'll recieve an email shortly", "success");
                         // Do something with the result (e.g., display a success message)
                         console.log('Registration Successful:', result);
                     })
                     .catch(error => {
                         // Handle errors here (e.g., display an error message)
-                        alert("Error.")
                         console.error('Error:', error.message);
                         showError("Error.", "danger");
                     });
 
 
 
-                document.getElementById("name").disabled = true;
+                document.getElementById("firstname").disabled = true;
+                document.getElementById("lastname").disabled = true;
                 document.getElementById("email").disabled = true;
                 document.getElementById("subject").disabled = true;
                 document.getElementById("message").disabled = true;
@@ -381,7 +398,7 @@
 
         };
         function showError(alert, alertType) {
-            var message = document.getElementById("message");
+            var message = document.getElementById("message-alert");
             var messagetext = document.createElement("div");
             messagetext.classList.add("alert")
             messagetext.classList.add("alert-" + alertType)
@@ -390,9 +407,13 @@
         }
 
         if (screen.height > screen.width) {
+
             document.getElementById("header-logo").hidden = true;
             document.querySelector(".menu-link").classList.remove("active");
             document.querySelector(".main-nav").classList.remove("active");
+            document.querySelector(".main-nav").style.overflow = 'scroll';
+            document.querySelector(".main-nav").style.height = 'inherit';
+            document.querySelector(".main-nav").style.minHeight = '90vh';
             document.querySelector(".main-menu").hidden = true;
             document.querySelector(".fa").addEventListener("click", function () {
                 if (document.querySelector(".menu-link").classList.value.includes("active")) {

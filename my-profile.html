@@ -663,7 +663,7 @@
                 document.getElementById("element-fullname").innerHTML = ` ${firstName + " " + lastName} <i class="fa fa-pencil" style="font-size:20px;" id="name-openPopup"></i>`
 
                 var myHeaders = new Headers();
-                myHeaders.append("email", "shaheer.ashraf@live.com");
+                myHeaders.append("email", sessionStorage.email);
                 myHeaders.append("firstname", firstName);
                 myHeaders.append("lastname", lastName);
 
