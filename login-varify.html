@@ -37,8 +37,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        
-
         body {
             font-family: Arial, sans-serif;
             background: url(./assets/images/contact-bg.jpg);
@@ -54,7 +52,7 @@
         }
 
         .login-container {
-            background-color: rgba(256,256,256,.1);
+            background-color: rgba(256, 256, 256, .1);
             backdrop-filter: blur(16px);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             width: 300px;
@@ -160,17 +158,18 @@
         <a href="" target="_b" class="author1" style="box-shadow:  rgba(0, 0, 0, 0.35) 0px 5px 15px !important;"></a>
         <div id="login-container"></div>
 
-        <input class="in-put" type="text" placeholder="Varification Code" id="code"><br><br><br>
+        <input class="in-put" type="text" placeholder="Varification Code" id="code">
+        <p id="resendtext">Didn't revieve an email? <a id="resend">Resend</a> </p>
         <button class="bntn" onclick="submit()">Continue</button>
         <div class="message" id="message">
         </div>
     </div>
-    
+
 </body>
 <script>
     if (localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '') {
         console.log("not signed in")
-        if(localStorage.getItem("email1") == null || localStorage.getItem("email1") == 'null' || localStorage.getItem("email1") == 'undefined' || localStorage.getItem("email1") == undefined){
+        if (localStorage.getItem("email1") == null || localStorage.getItem("email1") == 'null' || localStorage.getItem("email1") == 'undefined' || localStorage.getItem("email1") == undefined) {
             let url = "./login.html";
             window.location.href = url;
         }
@@ -249,7 +248,7 @@
     const hr = document.createElement("hr");
     const text2 = document.createElement("h2");
     const text3 = document.createElement("p");
-    text3.innerText = "Varification code has been sent to your email."
+    text3.innerText = "Verification code has been sent to your email. Code will expire after 3 minutes."
     text.classList.add("in-put");
     text.placeholder = "Email";
     text.type = "text";
@@ -337,9 +336,9 @@
         document.getElementById("header-logo").hidden = true;
         document.querySelector(".menu-link").classList.remove("active");
         document.querySelector(".main-nav").classList.remove("active");
-            document.querySelector(".main-nav").style.overflow = 'scroll';
-            document.querySelector(".main-nav").style.height = 'inherit';
-            document.querySelector(".main-nav").style.minHeight = '90vh';
+        document.querySelector(".main-nav").style.overflow = 'scroll';
+        document.querySelector(".main-nav").style.height = 'inherit';
+        document.querySelector(".main-nav").style.minHeight = '90vh';
         document.querySelector(".main-menu").hidden = true;
         document.querySelector(".fa").addEventListener("click", function () {
             if (document.querySelector(".menu-link").classList.value.includes("active")) {
@@ -354,6 +353,35 @@
             }
         })
     }
+    document.getElementById("resend").addEventListener("click",
+        function (event) {
+            
+            event.preventDefault();
+            document.getElementById("loading").style.display = "block";
+            var myHeaders = new Headers();
+            myHeaders.append("email", localStorage.email1);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch("https://prod-123.westeurope.logic.azure.com:443/workflows/61be700ba29044989549dee97fe80961/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jmEuGK_vaqqH45DwEUwpoKEh1oW6y8uSsV21Qhva6-A", requestOptions)
+                .then(response => {
+                    if(response.status == 200){
+                        alert("Code Sent!")
+                        document.getElementById("resendtext").innerText ="";
+                        document.getElementById("loading").style.display = "none";
+                    }else{
+                        alert("Unable to send code. Try again later.")
+                        document.getElementById("loading").style.display = "none";
+                    }
+                })
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+
+        })
 
 </script>
 
