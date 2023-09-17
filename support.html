@@ -375,19 +375,18 @@
                             document.getElementById("loading").style.display = "none";
                         } else {
                             // Handle other response codes (e.g., display an error message)
-                            showError("Error.", "danger")
+                            showError("Error. Pease try again.", "danger")
                             document.getElementById("loading").style.display = "none";
                         }
                     })
-                    .then(result => {
-                        showError("Success. Your request has been sent. You'll recieve an email shortly", "success");
+                    .then(result => {;
                         // Do something with the result (e.g., display a success message)
                         console.log('Registration Successful:', result);
                     })
                     .catch(error => {
                         // Handle errors here (e.g., display an error message)
                         console.error('Error:', error.message);
-                        showError("Error.", "danger");
+                        showError("Error. Please try again.", "danger");
                     });
 
 
