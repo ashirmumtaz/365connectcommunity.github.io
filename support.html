@@ -379,7 +379,8 @@
                             document.getElementById("loading").style.display = "none";
                         }
                     })
-                    .then(result => {;
+                    .then(result => {
+                        ;
                         // Do something with the result (e.g., display a success message)
                         console.log('Registration Successful:', result);
                     })
@@ -413,7 +414,6 @@
         }
 
         if (screen.height > screen.width) {
-
             document.getElementById("header-logo").hidden = true;
             document.querySelector(".menu-link").classList.remove("active");
             document.querySelector(".main-nav").classList.remove("active");
@@ -421,16 +421,19 @@
             document.querySelector(".main-nav").style.height = '60vh';
             document.querySelector(".main-nav").style.minHeight = '60vh';
             document.querySelector(".main-menu").hidden = true;
+            document.querySelector(".main-nav").hidden = true;
             document.querySelector(".fa").addEventListener("click", function () {
                 if (document.querySelector(".menu-link").classList.value.includes("active")) {
                     document.querySelector(".menu-link").classList.remove("active");
                     document.querySelector(".main-nav").classList.remove("active");
                     document.querySelector(".main-menu").hidden = false;
+                    document.querySelector(".main-nav").hidden = false;
                 }
                 else {
                     document.querySelector(".menu-link").classList.add("active");
                     document.querySelector(".main-nav").classList.add("active");
                     document.querySelector(".main-menu").hidden = true;
+                    document.querySelector(".main-nav").hidden = true;
                 }
             })
         }
