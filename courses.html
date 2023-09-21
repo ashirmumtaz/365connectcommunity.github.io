@@ -397,7 +397,7 @@ https://templatemo.com/tm-557-grad-school
       if (signedIn) {
         return `
     <li class="has-submenu">
-      <a href="#">Profile</a>
+      <a href="#">Login</a>
       <ul class="sub-menu">
         <li><a href="./login.html" class="external">Sign In</a></li>
         <li><a href="./signup.html" class="external">Sign Up</a></li>
@@ -409,6 +409,7 @@ https://templatemo.com/tm-557-grad-school
         return `
     <li class="has-submenu">
       <a href="#">Profile</a>
+      <img id= "myprofilepic" src="data:image/png;base64,${localStorage.getItem("image")}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
       <ul class="sub-menu">
         <li><a href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a href="./login.html" class="external">My Registrations</a></li>
@@ -446,6 +447,9 @@ https://templatemo.com/tm-557-grad-school
     document.getElementById("loading").style.display = "none";
     if (screen.height > screen.width) {
       document.getElementById("header-logo").hidden = true;
+    }
+    if (screen.height > screen.width) {
+      document.getElementById("myprofilepic").hidden = true;
     }
   </script>
 </body>

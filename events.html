@@ -210,7 +210,7 @@
             if (signedIn) {
                 return `
         <li class="has-submenu">
-      <a style="text-decoration: none !important;" href="#">Profile</a>
+      <a style="text-decoration: none !important;" href="#">Login</a>
       <ul class="sub-menu">
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">Sign In</a></li>
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./signup.html" class="external">Sign Up</a></li>
@@ -222,6 +222,7 @@
                 return `
     <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
+      <img id= "myprofilepic" src="data:image/png;base64,${localStorage.getItem("image")}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
       <ul class="sub-menu">
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">My Registrations</a></li>
@@ -505,6 +506,7 @@
             return colDiv;
         }
         if (screen.height > screen.width) {
+            document.getElementById("menu").style.display = "none"
             document.getElementById("header-logo").hidden = true;
             document.querySelector(".menu-link").classList.remove("active");
             document.querySelector(".main-nav").classList.remove("active");
@@ -517,14 +519,19 @@
                     document.querySelector(".menu-link").classList.remove("active");
                     document.querySelector(".main-nav").classList.remove("active");
                     document.querySelector(".main-menu").hidden = false;
+                    document.getElementById("menu").style.display = "block"
                 }
                 else {
+                    document.getElementById("menu").style.display = "none"
                     document.querySelector(".menu-link").classList.add("active");
                     document.querySelector(".main-nav").classList.add("active");
                     document.querySelector(".main-menu").hidden = true;
                 }
             })
         }
+        if (screen.height > screen.width) {
+      document.getElementById("myprofilepic").hidden = true;
+    }
 
     </script>
 

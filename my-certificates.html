@@ -167,7 +167,7 @@
                 window.location.href = './login.html';
                 return `
     <li class="has-submenu active">
-      <a href="#">Profile</a>
+      <a href="#">Login</a>
       <ul class="sub-menu">
         <li><a href="./login.html" class="external">Sign In</a></li>
         <li><a href="./signup.html" class="external">Sign Up</a></li>
@@ -179,6 +179,7 @@
                 return `
     <li class="has-submenu active">
       <a href="#">Profile</a>
+      <img id= "myprofilepic" src="data:image/png;base64,${localStorage.getItem("image")}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
       <ul class="sub-menu">
         <li><a href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a href="./login.html" class="external">My Registrations</a></li>
@@ -604,6 +605,9 @@
                 }
             })
         }
+        if (screen.height > screen.width) {
+      document.getElementById("myprofilepic").hidden = true;
+    }
     </script>
 
 
