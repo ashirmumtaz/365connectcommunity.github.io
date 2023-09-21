@@ -3,7 +3,8 @@
 
 <head>
     <meta property="og:title" content="365Connect Community">
-    <meta property="og:description" content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+    <meta property="og:description"
+        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
     <meta property="og:image" content="https://365connectcommunity.github.io/preview.png">
     <meta property="og:url" content="https://365connectcommunity.github.io/">
 
@@ -21,6 +22,10 @@
     <!-- Bootstrap core CSS -->
 
     <!-- Additional CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
     <link rel="stylesheet" href="assets/css/owl.css">
@@ -40,137 +45,136 @@
         iframe {
             width: 100%;
             margin-top: 80px;
-            height: inherit;
-            border: none; /* Optional: Removes the iframe border */
+            border: none;
+            /* Optional: Removes the iframe border */
         }
-        
- /* Absolute Center Spinner */
- .loading {
-     position: fixed;
-     z-index: 999099999;
-     height: 2em;
-     width: 2em;
-     overflow: show;
-     margin: auto;
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
- }
 
- /* Transparent Overlay */
- .loading:before {
-     content: '';
-     display: block;
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        /* Absolute Center Spinner */
+        .loading {
+            position: fixed;
+            z-index: 999099999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
 
-     background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
- }
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
 
- /* :not(:required) hides these rules from IE9 and below */
- .loading:not(:required) {
-     /* hide "loading..." text */
-     font: 0/0 a;
-     color: transparent;
-     text-shadow: none;
-     background-color: transparent;
-     border: 0;
- }
+            background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        }
 
- .loading:not(:required):after {
-     content: '';
-     display: block;
-     font-size: 10px;
-     width: 1em;
-     height: 1em;
-     margin-top: -0.5em;
-     -webkit-animation: spinner 150ms infinite linear;
-     -moz-animation: spinner 150ms infinite linear;
-     -ms-animation: spinner 150ms infinite linear;
-     -o-animation: spinner 150ms infinite linear;
-     animation: spinner 150ms infinite linear;
-     border-radius: 0.5em;
-     -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
-     box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
- }
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
 
- @-webkit-keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 150ms infinite linear;
+            -moz-animation: spinner 150ms infinite linear;
+            -ms-animation: spinner 150ms infinite linear;
+            -o-animation: spinner 150ms infinite linear;
+            animation: spinner 150ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
- @-moz-keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
- @-o-keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
- @keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -189,34 +193,84 @@
                 <li><a style="text-decoration: none !important;" href="./index.html">Home</a></li>
                 <li class="has-submenu active"><a style="text-decoration: none !important;" href="#">Our Family</a>
                     <ul class="sub-menu">
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html" class="external">Contributors</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./community-members.html" class="external">Members</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./become-contributor.html" class="external">Become Contributor</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./signup.html" class="external">Become Member</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./team-members.html"
+                                class="external">Contributors</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./community-members.html" class="external">Members</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./become-contributor.html" class="external">Become Contributor</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./signup.html"
+                                class="external">Become Member</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Resources</a>
                     <ul class="sub-menu">
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html" class="external">Events</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html" class="external">Blogs</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./courses.html" class="external">Courses</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./sample-soltutions.html" class="external">Sample Solutions</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./events.html"
+                                class="external">Events</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./blog.html"
+                                class="external">Blogs</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./courses.html"
+                                class="external">Courses</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;"
+                                href="./sample-soltutions.html" class="external">Sample Solutions</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a style="text-decoration: none !important;" href="#">Contact Us</a>
                     <ul class="sub-menu">
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html" class="external">Get Support</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html" class="external">Seek Guidance</a></li>
-                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./our-socials.html" class="external">Our Socials</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./support.html"
+                                class="external">Get Support</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./index.html"
+                                class="external">Seek Guidance</a></li>
+                        <li><a style="padding: 0px 0px;text-decoration: none !important;" href="./our-socials.html"
+                                class="external">Our Socials</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
     <div class="loading" id="loading">Loading&#8230;</div>
-    
-    <iframe src="./additional/frame-team.html" frameborder="0" scrolling="no"></iframe>
+    <section class="section coming-soon" data-section="section3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-xs-12">
+                    <div class="continer centerIt">
+                        <div>
+
+                            <div class="counter">
+
+                                <div class="days" style="width:100%;">
+                                    <div class="value">Our Team</div>
+                                    <span>365Connect Community</span>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- <iframe src="additional/frame-team.html" frameborder="0" id="teamframe" onload="this.height=this.contentWindow.document.body.scrollHeight;"></iframe> -->
     <!-- Site footer -->
+    <section class="section courses" data-section="section4" style="padding: 0px 30px 40px 30px;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading" style="margin-bottom: 0px !important;">
+                <h2>Team Members</h2><br><br>
+                <div class="row2" style=" display: -ms-flexbox;    display: flex;    -ms-flex-wrap: wrap;    flex-wrap: wrap;    margin-right: -15px;    margin-left: -15px;">
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <center>
+
+        
+
     <footer>
         <div class="container">
             <div class="row">
@@ -231,14 +285,14 @@
     </footer>
 
     <script>
-        
+
         const email = localStorage.getItem("email");
         const fullname = localStorage.getItem("name");
 
         var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
-    function generateProfileSubMenu() {
-      if (signedIn) {
-        return `
+        function generateProfileSubMenu() {
+            if (signedIn) {
+                return `
         <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
@@ -247,9 +301,9 @@
       </ul>
     </li>
   `;
-      }
-      else {
-        return `
+            }
+            else {
+                return `
     <li class="has-submenu">
       <a style="text-decoration: none !important;" href="#">Profile</a>
       <ul class="sub-menu">
@@ -260,31 +314,31 @@
       </ul>
     </li>
   `;
-      }
-    }
-    
+            }
+        }
+
 
         // Add a click event listener
-        
 
-    // Find the parent ul element with the class "main-menu"
-    const mainMenu = document.querySelector('.main-menu');
 
-    // Append the "Profile" submenu HTML to the mainMenu
-    mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
-    const myLink = document.getElementById('logout');
-    if(document.getElementById('logout'))
-    myLink.addEventListener('click', function (event) {
-            // Prevent the default behavior (e.g., navigating to the href URL)
-            event.preventDefault();
+        // Find the parent ul element with the class "main-menu"
+        const mainMenu = document.querySelector('.main-menu');
 
-            // You can also perform other actions here
-            localStorage.setItem("name", null);
-      localStorage.setItem("email", null);
-      localStorage.setItem("image", null);
-      window.location.href = './index.html';
-            
-        });
+        // Append the "Profile" submenu HTML to the mainMenu
+        mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+        const myLink = document.getElementById('logout');
+        if (document.getElementById('logout'))
+            myLink.addEventListener('click', function (event) {
+                // Prevent the default behavior (e.g., navigating to the href URL)
+                event.preventDefault();
+
+                // You can also perform other actions here
+                localStorage.setItem("name", null);
+                localStorage.setItem("email", null);
+                localStorage.setItem("image", null);
+                window.location.href = './index.html';
+
+            });
 
 
 
@@ -298,29 +352,85 @@
         //     document.getElementById("name").disabled = true;
         // }
         document.getElementById("loading").style.display = "none";
-        
-        if (screen.height > screen.width){
+
+        if (screen.height > screen.width) {
             document.getElementById("header-logo").hidden = true;
-        document.querySelector(".menu-link").classList.remove("active");
-        document.querySelector(".main-nav").classList.remove("active");
+            document.querySelector(".menu-link").classList.remove("active");
+            document.querySelector(".main-nav").classList.remove("active");
             document.querySelector(".main-nav").style.overflow = 'scroll';
             document.querySelector(".main-nav").style.height = '60vh';
             document.querySelector(".main-nav").style.minHeight = '60vh';
-        document.querySelector(".main-menu").hidden = true;
-        document.querySelector(".fa").addEventListener("click", function () {
-            if(document.querySelector(".menu-link").classList.value.includes("active")){
-                document.querySelector(".menu-link").classList.remove("active");
-                document.querySelector(".main-nav").classList.remove("active");
-                document.querySelector(".main-menu").hidden = false;
-            }
-            else{
-            document.querySelector(".menu-link").classList.add("active");
-            document.querySelector(".main-nav").classList.add("active");
             document.querySelector(".main-menu").hidden = true;
-            }
-        })
-    }
-</script>
+            document.querySelector(".fa").addEventListener("click", function () {
+                if (document.querySelector(".menu-link").classList.value.includes("active")) {
+                    document.querySelector(".menu-link").classList.remove("active");
+                    document.querySelector(".main-nav").classList.remove("active");
+                    document.querySelector(".main-menu").hidden = false;
+                }
+                else {
+                    document.querySelector(".menu-link").classList.add("active");
+                    document.querySelector(".main-nav").classList.add("active");
+                    document.querySelector(".main-menu").hidden = true;
+                }
+            })
+        }
+
+
+        function createTeamMemberCard(member) {
+  const teamMemberCard = document.createElement("div");
+  teamMemberCard.className = "column";
+  teamMemberCard.style.minWidth = "320px";
+  teamMemberCard.style.backgroundColor = "#202124";
+  teamMemberCard.style.margin = "10px";
+  teamMemberCard.style.padding = "10px";
+  teamMemberCard.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+  teamMemberCard.style.borderRadius = "10px";
+
+  if (member.sa_imageurl == '' || member.sa_imageurl == null) {
+    member.sa_imageurl =
+      "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
+  }
+
+  teamMemberCard.innerHTML = `
+    <div class="team-6">
+      <div class="team-img" style="position: relative; font-size: 0; text-align: center; border-radius: 100%; margin-bottom: 30px; overflow: hidden;">
+        <img src="${member.sa_imageurl}" alt="Team Image" style="width: 200px; height: 200px; border-radius: 100%; border: 15px solid transparent; transition: all .3s;">
+      </div>
+      <div class="team-content" style="text-align: center;">
+        <h3 style="color: white !important; font-size: 25px; font-weight: 700; letter-spacing: 2px; margin-bottom: 5px;">${member.sa_firstname} ${member.sa_lastname}</h3>
+        <h3 style="color: white !important; font-size: 16px; font-weight: 300; margin-bottom: 30px;">${member.sa_designation}</h3>
+        <div class="team-social" style="display: flex; align-items: center; justify-content: center; font-size: 0; margin-bottom:35px;">
+          <a class="social-fb" href="${member.sa_facebook}" target="_blank" style="display: inline-block; width: 40px;  margin-right: 5px; padding: 12px 0 10px 0; font-size: 16px; line-height: 16px; text-align: center; color: #ffffff; border-radius: 100%; transition: all .3s; background: #00acee;"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-li" href="${member.sa_linkedin}" target="_blank" style="display: inline-block; width: 40px;  margin-right: 5px; padding: 12px 0 10px 0; font-size: 16px; line-height: 16px; text-align: center; color: #ffffff; border-radius: 100%; transition: all .3s; background: #0e76a8;"><i class="fab fa-linkedin-in"></i></a>
+          <a class="social-in" href="${member.sa_instagram}" target="_blank" style="display: inline-block; width: 40px; margin-right: 5px; padding: 12px 0 10px 0; font-size: 16px; line-height: 16px; text-align: center; color: #ffffff; border-radius: 100%; transition: all .3s; background: #3f729b;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return teamMemberCard;
+}
+
+
+  // Fetch the JSON data
+  fetch("https://prod-72.westeurope.logic.azure.com:443/workflows/957b2e51c16540ff8c63857a67a6a0e6/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VZ_w69-oK1l9eSjf83FxPTXDpqr-GnposYU1D15354g")
+    .then((response) => response.json()) // Parse JSON from the response body
+    .then((responseData) => {
+      if (Array.isArray(responseData)) { // Check if responseData is an array
+        const container = document.querySelector(".row2"); // Get the container element
+
+        // Loop through the responseData and create team member cards
+        responseData.forEach((member) => {
+          const teamMemberCard = createTeamMemberCard(member);
+          container.appendChild(teamMemberCard);
+          
+        });
+      } else {
+        console.error("Data is not an array:", responseData);
+      }
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+    </script>
 
 </body>
 
