@@ -43,11 +43,21 @@ https://templatemo.com/tm-557-grad-school
     height: auto;
   }
   .card-title {
-  background-color: #222d43;
   height: 80px;
   display: flex; /* Use flex for aligning items within the card-title */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  font-size: 30px;
+}
+.card-title1 {
+  background: url(https://picstatio.com/large/nqhjvv/web-development-minimal-wallpaper.png);
+    background-size: cover;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    align-items: center;
+    background-repeat: no-repeat;
 }
 .modal-content {
     color: black;
@@ -313,6 +323,10 @@ https://templatemo.com/tm-557-grad-school
     cardBody.style.marginBottom = '20px';
 
     // Create card title
+    const cardTitle1 = document.createElement('h5');
+    cardTitle1.className = 'card-title1';
+    cardTitle1.style.marginBottom = "50px";
+
     const cardTitle = document.createElement('h5');
     cardTitle.className = 'card-title';
     cardTitle.style.marginBottom = "50px";
@@ -337,6 +351,7 @@ https://templatemo.com/tm-557-grad-school
     });
 
     // Append card title, text, and link to card body
+    cardBody.appendChild(cardTitle1);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     cardBody.appendChild(cardLink);
