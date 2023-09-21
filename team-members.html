@@ -361,16 +361,19 @@
             document.querySelector(".main-nav").style.height = '60vh';
             document.querySelector(".main-nav").style.minHeight = '60vh';
             document.querySelector(".main-menu").hidden = true;
+            document.getElementById("menu").style.display = "none"
             document.querySelector(".fa").addEventListener("click", function () {
                 if (document.querySelector(".menu-link").classList.value.includes("active")) {
                     document.querySelector(".menu-link").classList.remove("active");
                     document.querySelector(".main-nav").classList.remove("active");
                     document.querySelector(".main-menu").hidden = false;
+                    document.getElementById("menu").style.display = "block"
                 }
                 else {
                     document.querySelector(".menu-link").classList.add("active");
                     document.querySelector(".main-nav").classList.add("active");
                     document.querySelector(".main-menu").hidden = true;
+                    document.getElementById("menu").style.display = "none"
                 }
             })
         }
@@ -394,12 +397,12 @@
   teamMemberCard.innerHTML = `
     <div class="team-6">
       <div class="team-img" style="position: relative; font-size: 0; text-align: center; border-radius: 100%; margin-bottom: 30px; overflow: hidden;">
-        <img src="${member.sa_imageurl}" alt="Team Image" style="width: 200px; height: 200px; border-radius: 100%; border: 15px solid transparent; transition: all .3s;">
+        <img class="team-img1" src="${member.sa_imageurl}" alt="Team Image" style="width: 200px; height: 200px; border-radius: 100%; border: 15px solid transparent; transition: all .3s;">
       </div>
       <div class="team-content" style="text-align: center;">
         <h3 style="color: white !important; font-size: 25px; font-weight: 700; letter-spacing: 2px; margin-bottom: 5px;">${member.sa_firstname} ${member.sa_lastname}</h3>
         <h3 style="color: white !important; font-size: 16px; font-weight: 300; margin-bottom: 30px;">${member.sa_designation}</h3>
-        <div class="team-social" style="display: flex; align-items: center; justify-content: center; font-size: 0; margin-bottom:35px;">
+        <div style="display: flex; align-items: center; justify-content: center; font-size: 0; margin-bottom:35px;">
           <a class="social-fb" href="${member.sa_facebook}" target="_blank" style="display: inline-block; width: 40px;  margin-right: 5px; padding: 12px 0 10px 0; font-size: 16px; line-height: 16px; text-align: center; color: #ffffff; border-radius: 100%; transition: all .3s; background: #00acee;"><i class="fab fa-facebook-f"></i></a>
           <a class="social-li" href="${member.sa_linkedin}" target="_blank" style="display: inline-block; width: 40px;  margin-right: 5px; padding: 12px 0 10px 0; font-size: 16px; line-height: 16px; text-align: center; color: #ffffff; border-radius: 100%; transition: all .3s; background: #0e76a8;"><i class="fab fa-linkedin-in"></i></a>
           <a class="social-in" href="${member.sa_instagram}" target="_blank" style="display: inline-block; width: 40px; margin-right: 5px; padding: 12px 0 10px 0; font-size: 16px; line-height: 16px; text-align: center; color: #ffffff; border-radius: 100%; transition: all .3s; background: #3f729b;"><i class="fab fa-instagram"></i></a>
