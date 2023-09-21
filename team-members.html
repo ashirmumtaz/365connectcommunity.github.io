@@ -343,16 +343,6 @@
 
 
 
-        // if (localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '') {
-        //     console.log("notsignedin")
-        // } else {
-        //     document.getElementById("email").value = email;
-        //     document.getElementById("name").value = fullname;
-        //     document.getElementById("email").disabled = true;
-        //     document.getElementById("name").disabled = true;
-        // }
-        document.getElementById("loading").style.display = "none";
-
         if (screen.height > screen.width) {
             document.getElementById("header-logo").hidden = true;
             document.querySelector(".menu-link").classList.remove("active");
@@ -420,6 +410,7 @@
     .then((response) => response.json()) // Parse JSON from the response body
     .then((responseData) => {
       if (Array.isArray(responseData)) { // Check if responseData is an array
+        document.getElementById("loading").style.display = "block";
         const container = document.querySelector(".row2"); // Get the container element
 
         // Loop through the responseData and create team member cards
@@ -428,6 +419,7 @@
           container.appendChild(teamMemberCard);
           
         });
+        document.getElementById("loading").style.display = "none";
       } else {
         console.error("Data is not an array:", responseData);
       }

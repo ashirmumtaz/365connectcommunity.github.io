@@ -278,7 +278,7 @@ https://templatemo.com/tm-557-grad-school
 
       });
     /////
-    document.getElementById("loading").style.display = "none";
+    
     if (screen.height > screen.width) {
       document.getElementById("header-logo").hidden = true;
     }
@@ -350,6 +350,7 @@ https://templatemo.com/tm-557-grad-school
     // Append column to card container
     cardContainer.appendChild(columnDiv);
   });
+  document.getElementById("loading").style.display = "none";
 }
 var closeButtonHeader = document.querySelector(".modal-header .close");
   var closeButtonFooter = document.querySelector(".modal-footer button.btn-secondary");
@@ -435,6 +436,7 @@ function loadReadmeContent(repoName, repoUrl) {
         card.style.display = 'none';
       }
     });
+    
   }
   </script>
 
