@@ -59,7 +59,7 @@
  }
 
  .view-details {
-     background-color: #222d43;
+     background-color: orange;
      color: white;
      border: none;
      padding: 10px 20px;
@@ -69,6 +69,7 @@
 
  .view-details:hover {
      background-color: #555;
+     color: orange;
  }
 
  .register-now {
