@@ -494,6 +494,7 @@ section.why-us {
     background-image: url(../images/choosing-bg.jpg);
     background-color: #172238;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     padding-bottom: 100px;
 }
@@ -889,6 +890,7 @@ section.video {
     background-image: url(../images/video-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-color: #172238;
     padding: 120px 0px;
 }
