@@ -619,10 +619,17 @@ https://templatemo.com/tm-557-grad-school
   `;
       }
       else {
+        let profimg;
+        if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined') {
+            profimg = 'url(https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg) center no-repeat';
+        }
+        else {
+            profimg = `url(data:image/png;base64,${localStorage.getItem("image")}) center no-repeat`;
+        }
         return `
     <li class="has-submenu">
       <a href="#">Profile</a>
-      <img id= "myprofilepic" src="data:image/png;base64,${localStorage.getItem("image")}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
+      <img id= "myprofilepic" src="${profimg}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
       <ul class="sub-menu">
         <li><a href="./login.html" class="external">${localStorage.firstname}</a></li>
         <li><a href="./login.html" class="external">My Registrations</a></li>
