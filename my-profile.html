@@ -716,6 +716,9 @@
         if (screen.height > screen.width) {
       document.getElementById("myprofilepic").hidden = true;
     }
+        if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined') {
+          document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
+    }
     </script>
 
 
