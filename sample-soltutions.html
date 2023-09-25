@@ -42,24 +42,29 @@ https://templatemo.com/tm-557-grad-school
   body {
     height: auto;
   }
+
   .card-title {
-  height: 80px;
-  display: flex; /* Use flex for aligning items within the card-title */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  font-size: 30px;
-}
-.card-title1 {
-  background: url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg);
-    background-size: cover;
-    height: 170px;
+    height: 80px;
+    display: flex;
+    /* Use flex for aligning items within the card-title */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    font-size: 30px;
+  }
+
+  .card-title1 {
+    background-size: cover !important;
+    height: 232px;
     display: flex;
     justify-content: center;
     background-position: center;
     align-items: center;
     background-repeat: no-repeat;
-}
-.modal-content {
+  }
+
+  .modal-content {
     color: black;
   }
 
@@ -71,35 +76,38 @@ https://templatemo.com/tm-557-grad-school
 
   /* Set max-height and enable vertical scrolling for modal body */
   .modal-body {
-    max-height: 70vh; /* Adjust the maximum height as needed */
+    max-height: 70vh;
+    /* Adjust the maximum height as needed */
     overflow-y: auto;
-  }.modal-content p {
+  }
+
+  .modal-content p {
     color: black !important;
   }
 </style>
 
 <body>
   <!-- Modal -->
-<div class="modal fade" id="repoModal" tabindex="-1" aria-labelledby="repoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="repoModalLabel">Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="readmeContent"></div>
-      </div>
-      <div class="modal-footer">
-        <a id="visitRepoLink" class="btn btn-primary" href="#" target="_blank">Visit Repository</a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <div class="modal fade" id="repoModal" tabindex="-1" aria-labelledby="repoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="repoModalLabel">Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="readmeContent"></div>
+        </div>
+        <div class="modal-footer">
+          <a id="visitRepoLink" class="btn btn-primary" href="#" target="_blank">Visit Repository</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!---->
+  <!---->
   <h1 style="display: none;">365Connect Community</h1>
 
   <div class="loading" id="loading">Loading&#8230;</div>
@@ -143,7 +151,7 @@ https://templatemo.com/tm-557-grad-school
   </header>
 
   <section class="section coming-soon" data-section="section3">
-    <div class="container" >
+    <div class="container">
       <div class="row">
         <div class="col-md-7 col-xs-12">
           <div class="continer centerIt">
@@ -173,11 +181,12 @@ https://templatemo.com/tm-557-grad-school
               <h2>Power Apps Solutions</h2><br><br>
               <center>
                 <div style="width: 60%;">
-                  <input type="text" id="searchInput" class="form-control" placeholder="Search solutions..." onkeyup="filterCards()">
+                  <input type="text" id="searchInput" class="form-control" placeholder="Search solutions..."
+                    onkeyup="filterCards()">
                 </div>
               </center>
-              
-              
+
+
             </div>
           </div>
         </div>
@@ -289,141 +298,179 @@ https://templatemo.com/tm-557-grad-school
 
       });
     /////
-    
+
     if (screen.height > screen.width) {
       document.getElementById("header-logo").hidden = true;
     }
- 
+
     // JSON response data
 
 
     // Function to generate Bootstrap cards
     function generateCards(data) {
-  const cardContainer = document.getElementById('card-container');
+      const cardContainer = document.getElementById('card-container');
 
-  data.forEach(item => {
-    // Check if the item type is "file" and skip it
-    if (item.type === 'file') {
-      return;
+      data.forEach(item => {
+        // Check if the item type is "file" and skip it
+        if (item.type === 'file') {
+          return;
+        }
+
+        // Create a Bootstrap column div
+        const columnDiv = document.createElement('div');
+        columnDiv.className = 'col-sm-6';
+
+        // Create a Bootstrap card element
+        const card = document.createElement('div');
+        card.style.marginTop = '20px';
+        card.style.backgroundColor = "#202124";
+        card.style.color = "white";
+        card.className = 'card';
+
+        // Create card body
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+        cardBody.style.marginBottom = '20px';
+
+        const cardTitle1 = document.createElement('h5');
+        cardTitle1.className = 'card-title1';
+
+        var myHeaders = new Headers();
+        myHeaders.append("Cookie", "_octo=GH1.1.408325191.1695299995; logged_in=no");
+
+        var requestOptions = {
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
+        let screenshotFileName = '';
+        fetch("https://api.github.com/repos/365ConnectCommunity/sample-solutions/contents/" + item.name + "/assets", requestOptions)
+          .then(response => response.json())
+          .then(result => {
+
+            const assetValues = result;// Extract values from the result object
+            for (const asset of assetValues) {
+              if (asset.name.toLowerCase().includes('screenshot')) {
+                screenshotFileName = asset.download_url;
+                break;
+              }
+            }
+            console.log(screenshotFileName)
+            if (screenshotFileName) {
+              cardTitle1.style.background = `url(${screenshotFileName})`;
+            }
+            else {
+              cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";
+            }
+          })
+          .catch(error => {console.log('error', error);cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";});
+
+
+
+
+        // Create card title
+
+
+
+        //cardTitle1.style.background = `url(${screenshotFileName})`;
+        //cardTitle1.style.marginBottom = "50px";
+
+        const cardTitle = document.createElement('h5');
+        cardTitle.className = 'card-title';
+        //cardTitle.style.marginBottom = "50px";
+        cardTitle.textContent = item.name;
+
+        // Create card text
+        const cardText = document.createElement('p');
+        cardText.className = 'card-text';
+        cardText.textContent = item.description;
+
+        // Create card link (button)
+        const cardLink = document.createElement('button');
+        cardLink.type = 'button';
+        cardLink.textContent = 'View Details';
+        cardLink.className = 'btn btn-primary';
+        cardLink.style.backgroundColor = "orange";
+        cardLink.style.borderColor = "orange";
+
+        // Attach an event listener to the button to load readme content and open the modal
+        cardLink.addEventListener('click', () => {
+          loadReadmeContent(item.name, item.html_url);
+        });
+
+        // Append card title, text, and link to card body
+        cardBody.appendChild(cardTitle1);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(cardLink);
+
+        // Append card body to card
+        card.appendChild(cardBody);
+
+        // Append column to card container
+        columnDiv.appendChild(card);
+
+        // Append column to card container
+        cardContainer.appendChild(columnDiv);
+      });
+      document.getElementById("loading").style.display = "none";
+    }
+    var closeButtonHeader = document.querySelector(".modal-header .close");
+    var closeButtonFooter = document.querySelector(".modal-footer button.btn-secondary");
+
+    // Function to close the modal
+    function closeModal() {
+      // Find the modal dialog element and close it
+      var modalDialog = document.querySelector(".modal.fade");
+      modalDialog.style.display = "none";
     }
 
-    // Create a Bootstrap column div
-    const columnDiv = document.createElement('div');
-    columnDiv.className = 'col-sm-6';
+    // Add click event listeners to both close buttons
+    closeButtonHeader.addEventListener("click", closeModal);
+    closeButtonFooter.addEventListener("click", closeModal);
 
-    // Create a Bootstrap card element
-    const card = document.createElement('div');
-    card.style.marginTop = '20px';
-    card.style.backgroundColor = "#202124";
-    card.style.color = "white";
-    card.className = 'card';
+    // Function to load and render the README content
+    function loadReadmeContent(repoName, repoUrl) {
+      const readmeContentContainer = document.getElementById('readmeContent');
+      const visitRepoLink = document.getElementById('visitRepoLink');
+      const modal = document.getElementById('repoModal');
 
-    // Create card body
-    const cardBody = document.createElement('div');
-    cardBody.className = 'card-body';
-    cardBody.style.marginBottom = '20px';
+      // Fetch the readme.md content from the repository
+      fetch(`https://api.github.com/repos/365ConnectCommunity/sample-solutions/contents/${repoName}/README.md`)
+        .then(response => {
+          if (response.status === 404) {
+            throw new Error('Readme file not found.');
+          }
+          if (!response.ok) {
+            throw new Error('Failed to fetch readme content.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.content) {
+            const readmeContent = atob(data.content); // Decode Base64 content
+            // Convert markdown content to HTML (you'll need a library for this step)
+            const markdownConverter = new showdown.Converter(); // Assuming you use Showdown library for markdown conversion
+            const htmlContent = markdownConverter.makeHtml(readmeContent);
 
-    // Create card title
-    const cardTitle1 = document.createElement('h5');
-    cardTitle1.className = 'card-title1';
-    cardTitle1.style.marginBottom = "50px";
-
-    const cardTitle = document.createElement('h5');
-    cardTitle.className = 'card-title';
-    cardTitle.style.marginBottom = "50px";
-    cardTitle.textContent = item.name;
-
-    // Create card text
-    const cardText = document.createElement('p');
-    cardText.className = 'card-text';
-    cardText.textContent = item.description;
-
-    // Create card link (button)
-    const cardLink = document.createElement('button');
-    cardLink.type = 'button';
-    cardLink.textContent = 'View Details';
-    cardLink.className = 'btn btn-primary';
-    cardLink.style.backgroundColor = "orange";
-    cardLink.style.borderColor = "orange";
-
-    // Attach an event listener to the button to load readme content and open the modal
-    cardLink.addEventListener('click', () => {
-      loadReadmeContent(item.name, item.html_url);
-    });
-
-    // Append card title, text, and link to card body
-    cardBody.appendChild(cardTitle1);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardText);
-    cardBody.appendChild(cardLink);
-
-    // Append card body to card
-    card.appendChild(cardBody);
-
-    // Append column to card container
-    columnDiv.appendChild(card);
-
-    // Append column to card container
-    cardContainer.appendChild(columnDiv);
-  });
-  document.getElementById("loading").style.display = "none";
-}
-var closeButtonHeader = document.querySelector(".modal-header .close");
-  var closeButtonFooter = document.querySelector(".modal-footer button.btn-secondary");
-
-  // Function to close the modal
-  function closeModal() {
-    // Find the modal dialog element and close it
-    var modalDialog = document.querySelector(".modal.fade");
-    modalDialog.style.display = "none";
-  }
-
-  // Add click event listeners to both close buttons
-  closeButtonHeader.addEventListener("click", closeModal);
-  closeButtonFooter.addEventListener("click", closeModal);
-
-// Function to load and render the README content
-function loadReadmeContent(repoName, repoUrl) {
-  const readmeContentContainer = document.getElementById('readmeContent');
-  const visitRepoLink = document.getElementById('visitRepoLink');
-  const modal = document.getElementById('repoModal');
-
-  // Fetch the readme.md content from the repository
-  fetch(`https://api.github.com/repos/365ConnectCommunity/sample-solutions/contents/${repoName}/README.md`)
-    .then(response => {
-      if (response.status === 404) {
-        throw new Error('Readme file not found.');
-      }
-      if (!response.ok) {
-        throw new Error('Failed to fetch readme content.');
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.content) {
-        const readmeContent = atob(data.content); // Decode Base64 content
-        // Convert markdown content to HTML (you'll need a library for this step)
-        const markdownConverter = new showdown.Converter(); // Assuming you use Showdown library for markdown conversion
-        const htmlContent = markdownConverter.makeHtml(readmeContent);
-
-        readmeContentContainer.innerHTML = htmlContent;
-        visitRepoLink.href = repoUrl;
-        modal.classList.add('show'); // Show the modal by adding the 'show' class
-        modal.style.display = 'block'; // Make sure the modal is displayed
-        modal.setAttribute('aria-hidden', 'false'); // Set aria-hidden attribute to 'false'
-      } else {
-        throw new Error('Readme content is empty.');
-      }
-    })
-    .catch(error => {
-      console.error('Error loading readme content:', error);
-      readmeContentContainer.innerHTML = '<p>Error loading readme content.</p>';
-      visitRepoLink.href = repoUrl;
-      modal.classList.add('show'); // Show the modal even on error
-      modal.style.display = 'block';
-      modal.setAttribute('aria-hidden', 'false');
-    });
-}
+            readmeContentContainer.innerHTML = htmlContent;
+            visitRepoLink.href = repoUrl;
+            modal.classList.add('show'); // Show the modal by adding the 'show' class
+            modal.style.display = 'block'; // Make sure the modal is displayed
+            modal.setAttribute('aria-hidden', 'false'); // Set aria-hidden attribute to 'false'
+          } else {
+            throw new Error('Readme content is empty.');
+          }
+        })
+        .catch(error => {
+          console.error('Error loading readme content:', error);
+          readmeContentContainer.innerHTML = '<p>Error loading readme content.</p>';
+          visitRepoLink.href = repoUrl;
+          modal.classList.add('show'); // Show the modal even on error
+          modal.style.display = 'block';
+          modal.setAttribute('aria-hidden', 'false');
+        });
+    }
 
 
 
@@ -438,28 +485,30 @@ function loadReadmeContent(repoName, repoUrl) {
       .then(response => response.text())
       .then(result => generateCards(JSON.parse(result)))
       .catch(error => console.log('error', error));
-      function filterCards() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const cards = document.querySelectorAll('.card');
+    function filterCards() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
 
-    cards.forEach(card => {
-      const cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
-      const cardDescription = card.querySelector('.card-text').textContent.toLowerCase();
+      cards.forEach(card => {
+        const cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
+        const cardDescription = card.querySelector('.card-text').textContent.toLowerCase();
 
-      if (cardTitle.includes(searchInput) || cardDescription.includes(searchInput)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-    
-  }
-  if (screen.height > screen.width) {
+        if (cardTitle.includes(searchInput) || cardDescription.includes(searchInput)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+    }
+    if (screen.height > screen.width) {
       document.getElementById("myprofilepic").hidden = true;
     }
-    if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined'  || localStorage.getItem("image") == undefined) {
-          document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
-    }
+    try {
+      if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined' || localStorage.getItem("image") == undefined) {
+        document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
+      }
+    } catch (e) { console.log(e) }
   </script>
 
 </body>
