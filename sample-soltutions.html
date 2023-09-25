@@ -344,6 +344,7 @@ https://templatemo.com/tm-557-grad-school
           redirect: 'follow'
         };
         let screenshotFileName = '';
+        try{
         fetch("https://api.github.com/repos/365ConnectCommunity/sample-solutions/contents/" + item.name + "/assets", requestOptions)
           .then(response => response.json())
           .then(result => {
@@ -364,6 +365,9 @@ https://templatemo.com/tm-557-grad-school
             }
           })
           .catch(error => {console.log('error', error);cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";});
+        }catch{
+          cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";
+        }
 
 
 
