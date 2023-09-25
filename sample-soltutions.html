@@ -200,9 +200,13 @@ https://templatemo.com/tm-557-grad-school
       </div>
     </center>
   </section>
-
-
-
+  <center><br><br><br>
+  <div>
+    <button id="prevPageBtn" disabled class="btn-primary" style="height: 45px;    width: 90px;">&laquo; Prev</button>
+    <span id="currentPage">Page 1</span>
+    <button id="nextPageBtn" class="btn-primary" style="height: 45px;    width: 90px;">Next &raquo;</button>
+  </div>
+</center><br><br><br>
   <footer>
     <div class="container">
       <div class="row">
@@ -344,28 +348,28 @@ https://templatemo.com/tm-557-grad-school
           redirect: 'follow'
         };
         let screenshotFileName = '';
-        try{
-        fetch("https://api.github.com/repos/365ConnectCommunity/sample-solutions/contents/" + item.name + "/assets", requestOptions)
-          .then(response => response.json())
-          .then(result => {
+        try {
+          fetch("https://api.github.com/repos/365ConnectCommunity/sample-solutions/contents/" + item.name + "/assets", requestOptions)
+            .then(response => response.json())
+            .then(result => {
 
-            const assetValues = result;// Extract values from the result object
-            for (const asset of assetValues) {
-              if (asset.name.toLowerCase().includes('screenshot')) {
-                screenshotFileName = asset.download_url;
-                break;
+              const assetValues = result;// Extract values from the result object
+              for (const asset of assetValues) {
+                if (asset.name.toLowerCase().includes('screenshot')) {
+                  screenshotFileName = asset.download_url;
+                  break;
+                }
               }
-            }
-            console.log(screenshotFileName)
-            if (screenshotFileName) {
-              cardTitle1.style.background = `url(${screenshotFileName})`;
-            }
-            else {
-              cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";
-            }
-          })
-          .catch(error => {console.log('error', error);cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";});
-        }catch{
+              console.log(screenshotFileName)
+              if (screenshotFileName) {
+                cardTitle1.style.background = `url(${screenshotFileName})`;
+              }
+              else {
+                cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";
+              }
+            })
+            .catch(error => { console.log('error', error); cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)"; });
+        } catch {
           cardTitle1.style.background = "url(https://dynamics365blocks.files.wordpress.com/2018/09/splash.jpg)";
         }
 
@@ -513,6 +517,65 @@ https://templatemo.com/tm-557-grad-school
         document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
       }
     } catch (e) { console.log(e) }
+
+
+
+
+    ////////////////
+
+
+    // Define variables to track pagination
+    let currentPage = 1;
+    const cardsPerPage = 6; // Change this to the desired number of cards per page
+
+    // Function to display cards for the current page
+    function displayCurrentPage() {
+      const cards = document.querySelectorAll('.card');
+      const startIndex = (currentPage - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+
+      cards.forEach((card, index) => {
+        if (index >= startIndex && index < endIndex) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('currentPage').textContent = `Page ${currentPage}`;
+    }
+
+    // Function to update pagination buttons based on the current page
+    function updatePaginationButtons() {
+      const prevPageBtn = document.getElementById('prevPageBtn');
+      const nextPageBtn = document.getElementById('nextPageBtn');
+
+      prevPageBtn.disabled = currentPage === 1;
+      nextPageBtn.disabled = currentPage === Math.ceil(cards.length / cardsPerPage);
+    }
+
+    // Add event listeners to pagination buttons
+    document.getElementById('prevPageBtn').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        displayCurrentPage();
+        updatePaginationButtons();
+      }
+    });
+
+    document.getElementById('nextPageBtn').addEventListener('click', () => {
+      const totalPage = Math.ceil(cards.length / cardsPerPage);
+      if (currentPage < totalPage) {
+        currentPage++;
+        displayCurrentPage();
+        updatePaginationButtons();
+      }
+    });
+
+    // Initial display of cards and pagination buttons
+    displayCurrentPage();
+    updatePaginationButtons();
+
   </script>
 
 </body>
