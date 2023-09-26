@@ -3,7 +3,8 @@
 
 <head>
     <meta property="og:title" content="365Connect Community">
-    <meta property="og:description" content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
+    <meta property="og:description"
+        content="365Connect is a community dedicated to promoting and advancing the adoption of Microsoft D365 and Power Platform technologies. Our primary goal is to foster a supportive environment where individuals can learn, teach, and collaborate on all things related to these powerful tools. Whether you're an experienced user or just starting out, we welcome members from any part of the globe to join us in our mission to promote and develop this community.">
     <meta property="og:image" content="https://365connectcommunity.github.io/preview.png">
     <meta property="og:url" content="https://365connectcommunity.github.io/">
 
@@ -40,136 +41,136 @@
             width: 100%;
             margin-top: 80px;
             height: 120vh;
-            border: none; /* Optional: Removes the iframe border */
+            border: none;
+            /* Optional: Removes the iframe border */
         }
-        
- /* Absolute Center Spinner */
- .loading {
-     position: fixed;
-     z-index: 999099999;
-     height: 2em;
-     width: 2em;
-     overflow: show;
-     margin: auto;
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
- }
 
- /* Transparent Overlay */
- .loading:before {
-     content: '';
-     display: block;
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        /* Absolute Center Spinner */
+        .loading {
+            position: fixed;
+            z-index: 999099999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
 
-     background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
- }
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
 
- /* :not(:required) hides these rules from IE9 and below */
- .loading:not(:required) {
-     /* hide "loading..." text */
-     font: 0/0 a;
-     color: transparent;
-     text-shadow: none;
-     background-color: transparent;
-     border: 0;
- }
+            background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        }
 
- .loading:not(:required):after {
-     content: '';
-     display: block;
-     font-size: 10px;
-     width: 1em;
-     height: 1em;
-     margin-top: -0.5em;
-     -webkit-animation: spinner 150ms infinite linear;
-     -moz-animation: spinner 150ms infinite linear;
-     -ms-animation: spinner 150ms infinite linear;
-     -o-animation: spinner 150ms infinite linear;
-     animation: spinner 150ms infinite linear;
-     border-radius: 0.5em;
-     -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
-     box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
- }
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
 
- @-webkit-keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 150ms infinite linear;
+            -moz-animation: spinner 150ms infinite linear;
+            -ms-animation: spinner 150ms infinite linear;
+            -o-animation: spinner 150ms infinite linear;
+            animation: spinner 150ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
- @-moz-keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
- @-o-keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
- @keyframes spinner {
-     0% {
-         -webkit-transform: rotate(0deg);
-         -moz-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 
-     100% {
-         -webkit-transform: rotate(360deg);
-         -moz-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+        @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
 
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -186,6 +187,7 @@
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
                 <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="https://365connectcommunity.azurewebsites.net/" class="external">Shop</a></li>
                 <li class="has-submenu"><a href="#">Our Family</a>
                     <ul class="sub-menu">
                         <li><a href="./team-members.html" class="external">Contributors</a></li>
@@ -199,7 +201,7 @@
                         <li><a href="./events.html" class="external">Events</a></li>
                         <li><a href="./blog.html" class="external">Blogs</a></li>
                         <li><a href="./courses.html" class="external">Courses</a></li>
-            <li><a href="./sample-soltutions.html" class="external">Sample Solutions</a></li>
+                        <li><a href="./sample-soltutions.html" class="external">Sample Solutions</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a href="#">Contact Us</a>
@@ -219,16 +221,16 @@
         <p>The link you followed does not exist.</p>
         <a href="./" style="color: orange;">Click Here to Navigate to Home Screen</a>
     </center>
-    
+
 
     <script>
-        
+
         const email = localStorage.getItem("email");
         const fullname = localStorage.getItem("name");
         var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
-    function generateProfileSubMenu() {
-      if (signedIn) {
-        return `
+        function generateProfileSubMenu() {
+            if (signedIn) {
+                return `
     <li class="has-submenu">
       <a href="#">Login</a>
       <ul class="sub-menu">
@@ -237,9 +239,9 @@
       </ul>
     </li>
   `;
-      }
-      else {
-        return `
+            }
+            else {
+                return `
     <li class="has-submenu">
       <a href="#">Profile</a>
       <img id= "myprofilepic" src="data:image/png;base64,${localStorage.getItem("image")}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
@@ -251,31 +253,31 @@
       </ul>
     </li>
   `;
-      }
-    }
-    
+            }
+        }
+
 
         // Add a click event listener
-        
 
-    // Find the parent ul element with the class "main-menu"
-    const mainMenu = document.querySelector('.main-menu');
 
-    // Append the "Profile" submenu HTML to the mainMenu
-    mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
-    const myLink = document.getElementById('logout');
-    if(document.getElementById('logout'))
-    myLink.addEventListener('click', function (event) {
-            // Prevent the default behavior (e.g., navigating to the href URL)
-            event.preventDefault();
+        // Find the parent ul element with the class "main-menu"
+        const mainMenu = document.querySelector('.main-menu');
 
-            // You can also perform other actions here
-            localStorage.setItem("name", null);
-      localStorage.setItem("email", null);
-      localStorage.setItem("image", null);
-      window.location.href = './index.html';
-            
-        });
+        // Append the "Profile" submenu HTML to the mainMenu
+        mainMenu.insertAdjacentHTML('beforeend', generateProfileSubMenu());
+        const myLink = document.getElementById('logout');
+        if (document.getElementById('logout'))
+            myLink.addEventListener('click', function (event) {
+                // Prevent the default behavior (e.g., navigating to the href URL)
+                event.preventDefault();
+
+                // You can also perform other actions here
+                localStorage.setItem("name", null);
+                localStorage.setItem("email", null);
+                localStorage.setItem("image", null);
+                window.location.href = './index.html';
+
+            });
 
 
 
@@ -289,32 +291,32 @@
         //     document.getElementById("name").disabled = true;
         // }
         document.getElementById("loading").style.display = "none";
-        
-        if (screen.height > screen.width){
+
+        if (screen.height > screen.width) {
             document.getElementById("header-logo").hidden = true;
-        document.querySelector(".menu-link").classList.remove("active");
-        document.querySelector(".main-nav").classList.remove("active");
-        document.querySelector(".main-menu").hidden = true;
-        document.querySelector(".fa").addEventListener("click", function () {
-            if(document.querySelector(".menu-link").classList.value.includes("active")){
-                document.querySelector(".menu-link").classList.remove("active");
-                document.querySelector(".main-nav").classList.remove("active");
-                document.querySelector(".main-menu").hidden = false;
-            }
-            else{
-            document.querySelector(".menu-link").classList.add("active");
-            document.querySelector(".main-nav").classList.add("active");
+            document.querySelector(".menu-link").classList.remove("active");
+            document.querySelector(".main-nav").classList.remove("active");
             document.querySelector(".main-menu").hidden = true;
-            }
-        })
-    }
-    if (screen.height > screen.width) {
-      document.getElementById("myprofilepic").hidden = true;
-    }
-        if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined'  || localStorage.getItem("image") == undefined) {
-          document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
-    }
-</script>
+            document.querySelector(".fa").addEventListener("click", function () {
+                if (document.querySelector(".menu-link").classList.value.includes("active")) {
+                    document.querySelector(".menu-link").classList.remove("active");
+                    document.querySelector(".main-nav").classList.remove("active");
+                    document.querySelector(".main-menu").hidden = false;
+                }
+                else {
+                    document.querySelector(".menu-link").classList.add("active");
+                    document.querySelector(".main-nav").classList.add("active");
+                    document.querySelector(".main-menu").hidden = true;
+                }
+            })
+        }
+        if (screen.height > screen.width) {
+            document.getElementById("myprofilepic").hidden = true;
+        }
+        if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined' || localStorage.getItem("image") == undefined) {
+            document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
+        }
+    </script>
 
 </body>
 
