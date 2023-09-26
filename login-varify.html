@@ -141,7 +141,7 @@
                         <li><a href="./events.html" class="external">Events</a></li>
                         <li><a href="./blog.html" class="external">Blogs</a></li>
                         <li><a href="./courses.html" class="external">Courses</a></li>
-            <li><a href="./sample-soltutions.html" class="external">Sample Solutions</a></li>
+                        <li><a href="./sample-soltutions.html" class="external">Sample Solutions</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu"><a href="#">Contact Us</a>
@@ -357,7 +357,7 @@
     }
     document.getElementById("resend").addEventListener("click",
         function (event) {
-            
+
             event.preventDefault();
             document.getElementById("loading").style.display = "block";
             var myHeaders = new Headers();
@@ -371,11 +371,11 @@
 
             fetch("https://prod-209.westeurope.logic.azure.com:443/workflows/c0bb2d10ed58415695b94bce060ac427/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XfmNae_9UnsIvRwiXHv9vzk7h0L44wP1V3wa9gRcyPg", requestOptions)
                 .then(response => {
-                    if(response.status == 200){
+                    if (response.status == 200) {
                         alert("Code Sent!")
-                        document.getElementById("resendtext").innerText ="";
+                        document.getElementById("resendtext").innerText = "";
                         document.getElementById("loading").style.display = "none";
-                    }else{
+                    } else {
                         alert("Unable to send code. Try again later.")
                         document.getElementById("loading").style.display = "none";
                     }
@@ -384,13 +384,13 @@
                 .catch(error => console.log('error', error));
 
         })
-        if (screen.height > screen.width){
+    if (screen.height > screen.width) {
         document.getElementById("header-logo").hidden = true;
         document.querySelector(".menu-link").classList.remove("active");
         document.querySelector(".main-nav").classList.remove("active");
-            document.querySelector(".main-nav").style.overflow = 'scroll';
-            document.querySelector(".main-nav").style.height = '60vh';
-            document.querySelector(".main-nav").style.minHeight = '60vh';
+        document.querySelector(".main-nav").style.overflow = 'scroll';
+        document.querySelector(".main-nav").style.height = '60vh';
+        document.querySelector(".main-nav").style.minHeight = '60vh';
         document.querySelector(".main-menu").hidden = true;
         // document.querySelector(".fa").addEventListener("click", function () {
         //     if(document.querySelector(".menu-link").classList.value.includes("active")){
@@ -406,10 +406,10 @@
         // })
     }
     if (screen.height > screen.width) {
-      document.getElementById("myprofilepic").hidden = true;
+        document.getElementById("myprofilepic").hidden = true;
     }
-    if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined'  || localStorage.getItem("image") == undefined) {
-          document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
+    if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined' || localStorage.getItem("image") == undefined) {
+        document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
     }
 </script>
 
