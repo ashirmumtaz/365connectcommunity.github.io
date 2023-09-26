@@ -114,7 +114,7 @@
       if (signedIn) {
         return `
         <li class="has-submenu">
-      <a style="text-decoration: none !important;" href="#">Login</a>
+      <img id= "myprofilepic" src="./assets/images/icons8-account-64.png" style="width:45px;height:45px;border-radius:200px;border:0px solid orange;">
       <ul class="sub-menu">
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">Sign In</a></li>
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./signup.html" class="external">Sign Up</a></li>
@@ -125,7 +125,6 @@
       else {
         return `
     <li class="has-submenu">
-      <a style="text-decoration: none !important;" href="#">Profile</a>
       <img id= "myprofilepic" src="data:image/png;base64,${localStorage.getItem("image")}" style="width:45px;height:45px;border-radius:200px;border:2px solid orange;">
       <ul class="sub-menu">
         <li><a style="text-decoration: none !important;padding: 0px 0px;" href="./login.html" class="external">${localStorage.firstname}</a></li>
@@ -193,9 +192,6 @@ myLink.addEventListener('click', function (event) {
     }
     if (screen.height > screen.width) {
       document.getElementById("myprofilepic").hidden = true;
-    }
-        if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined'  || localStorage.getItem("image") == undefined) {
-          document.getElementById("myprofilepic").src = "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg";
     }
 </script>
 
