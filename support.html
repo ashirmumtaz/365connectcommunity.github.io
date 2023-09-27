@@ -256,7 +256,6 @@
         var signedIn = localStorage.getItem("name") == null || localStorage.getItem("email") == null || localStorage.getItem("email") == 'null' || localStorage.getItem("name") == 'null' || localStorage.getItem("email") == '' || localStorage.getItem("name") == '' || localStorage.getItem("email") == undefined || localStorage.getItem("name") == undefined;
         function generateProfileSubMenu() {
             if (signedIn) {
-                //window.location.href = './login.html';
                 return `
         <li class="has-submenu">
       <img id= "myprofilepic" src="./assets/images/icons8-account-64.png" style="width:45px;height:45px;border-radius:200px;border:0px solid orange;">
