@@ -460,6 +460,9 @@
         if (screen.height > screen.width) {
       document.getElementById("myprofilepic").hidden = true;
     }
+    if (localStorage.getItem("image") == '' || localStorage.getItem("image") == null || localStorage.getItem("image") == 'null' || localStorage.getItem("image") == 'undefined') {
+      document.getElementById("myprofilepic").src = './assets/images/icons8-account-64.png';
+    }
     </script>
 
 </body>
